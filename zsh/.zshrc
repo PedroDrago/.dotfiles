@@ -4,7 +4,7 @@
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
-#--------------------------PATHS-------------------------------------------
+#----------------------------------PATHS----------------------------------
 path+=~/.local/bin
 export path
 
@@ -14,12 +14,9 @@ export path
 export ZSH="$HOME/.oh-my-zsh"
 
 path+="$HOME/dotnet"
-
 export DOTNET_ROOT=$HOME/dotnet
 
-# export= /
-
-#-------------------------------------------------------------------------
+#-----------------------------------ZSH-----------------------------------
 
 ZSH_THEME="powerlevel10k/powerlevel10k"
 
@@ -27,10 +24,11 @@ plugins=(git asdf z zsh-autosuggestions zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
 
-#aliases
+#------------------------------ALIASES|MACROS-----------------------------
 alias ls='exa --icons'
 alias bat='bat --style=auto'
 alias q='exit'
+alias telegram='/opt/telegram/telegram' #for dmenu i guess? don't remember at all.
 
 #makes cd ls after
 function chpwd(){
@@ -38,8 +36,7 @@ function chpwd(){
   ls
 }
 
-# only in i3
-alias telegram='/opt/telegram/telegram'
+#-------------------------------------------------------------------------
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
