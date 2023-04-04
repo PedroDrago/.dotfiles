@@ -1,0 +1,7 @@
+[user]
+	name = Pedro Drago
+	email = 93255861+PedroDrago@users.noreply.github.com
+[init]
+	defaultBranch = main
+[color]
+	ui = auto
