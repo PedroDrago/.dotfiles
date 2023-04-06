@@ -29,6 +29,7 @@ alias ls='exa --icons'
 alias bat='bat --style=auto'
 alias q='exit'
 alias telegram='/opt/telegram/telegram' #for dmenu i guess? don't remember at all.
+alias t='tmux'
 
 #makes cd ls after
 function chpwd(){
@@ -36,7 +37,12 @@ function chpwd(){
   ls
 }
 
+# bindkey -s ^f "tmux-sessionizer\n"
+#add fuzzy finder + tmux sessions script to a control + f keybinding
+bindkey -s "^f" "tmux-sessionizer\n"
 #-------------------------------------------------------------------------
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
