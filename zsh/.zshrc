@@ -31,15 +31,13 @@ alias q='exit'
 alias telegram='/opt/telegram/telegram' #for dmenu i guess? don't remember at all.
 alias t='tmux'
 alias ur='update_repos'
+
+
 #makes cd ls after
 function chpwd(){
   emulate -L zsh
   ls
 }
-
-# bindkey -s ^f "tmux-sessionizer\n"
-#add fuzzy finder + tmux sessions script to a control + f keybinding
-bindkey -s "^f" "tmux-sessionizer\n"
 #-------------------------------------------------------------------------
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
