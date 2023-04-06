@@ -11,6 +11,7 @@ exec --no-startup-id setxkbmap -option compose:ralt
 SET $primary_monitor HDMI-0
 SET $secondary_monitor DP-0
 
+
 # creat workspaces variables
 set $ws1 "1"
 set $ws2 "2"

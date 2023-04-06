@@ -30,7 +30,6 @@ alias bat='bat --style=auto'
 alias q='exit'
 alias telegram='/opt/telegram/telegram' #for dmenu i guess? don't remember at all.
 alias t='tmux'
-
 #makes cd ls after
 function chpwd(){
   emulate -L zsh
