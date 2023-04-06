@@ -5,6 +5,18 @@ set $mod Mod1
 # set compose key as AltGr
 exec --no-startup-id setxkbmap -option compose:ralt
 
+#----------KEYBINDINGS-------------------------
+#i3lock
+bindsym Control+shift+l exec "i3lock -t -i ~/.config/i3/desktop_purple_mountain.png"
+
+
+
+
+#-----------I3STARTUP-CONFIGS--------------------
+
+#set wallpaper
+exec_always --no-startup-id feh --bg-fill ~/.config/i3/desktop_purple_mountain.png
+
 
 #-----------WORKSPACES OUTPUTS-----------------
 # create monitors variables
@@ -79,7 +91,6 @@ focus_follows_mouse no
 mouse_warping none
 
 #set wallpaper
-exec_always --no-startup-id feh --bg-fill ~/.config/i3/desktop_purple_mountain.png
 
 #bind flameshot to PrintScreen key
 bindsym Print exec flameshot gui
@@ -92,10 +103,8 @@ bindsym $mod+Return exec alacritty
 bindsym $mod+q kill
 
 #set lock binding
-bindsym Control+shift+l exec "i3lock -t -i ~/.config/i3/desktop_purple_mountain.png"
 
 #set autolock to 3 minutes
-# exec "xautolock -detectsleep -time 3 -locker \"i3lock -i -t ~/.config/i3/desktop_purple_mountain.png\""
 exec xautolock -detectsleep -time 10 -locker "i3lock -t -i ~/.config/i3/desktop_purple_mountain.png"
 
 
