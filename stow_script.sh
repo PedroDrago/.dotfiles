@@ -24,7 +24,7 @@ stow --adopt -v git
 # stow --adopt --target=$HOME/target_directory -v file_with_configs    
 stow --adopt --target=$HOME/.config/i3 -v i3 
 stow --adopt --target=$HOME/.config/alacritty -v alacritty
-
+sudo stow --adopt --target=/usr/bin -v scripts
 
 
 #each .dotfile have to be checked existence, and if exists: deleted. the following code does that
