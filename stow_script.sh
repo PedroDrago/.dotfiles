@@ -11,12 +11,11 @@ fi
 
 if test -f "$HOME/.config/i3/config";then
   rm $HOME/.config/i3/config
-if
+fi
 
 if test -f "$HOME/.config/alacritty/alacritty.yml";then
   rm $HOME/.config/alacritty/alacritty.yml
-if
-
+fi
 
 stow --adopt -v zsh
 stow --adopt -v git
@@ -27,6 +26,8 @@ stow --adopt --target=$HOME/.config/i3 -v i3
 stow --adopt --target=$HOME/.config/alacritty -v alacritty
 
 
-#if test -f "";then
 
+#each .dotfile have to be checked existence, and if exists: deleted. the following code does that
+#if test -f "";then
+# rm
 #if
