@@ -31,7 +31,7 @@ alias q='exit'
 alias telegram='/opt/telegram/telegram' #for dmenu i guess? don't remember at all.
 alias t='tmux'
 alias ur='update_repos'
-
+alias vim='nvim'
 
 #makes cd ls after
 function chpwd(){
