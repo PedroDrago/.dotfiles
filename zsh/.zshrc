@@ -32,7 +32,7 @@ alias telegram='/opt/telegram/telegram' #for dmenu i guess? don't remember at al
 alias t='tmux'
 alias ur='update_repos'
 alias vim='nvim'
-
+alias c='clear'
 #makes cd ls after
 function chpwd(){
   emulate -L zsh
