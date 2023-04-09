@@ -18,8 +18,8 @@ return require('packer').startup(function(use)
   use 'kyazdani42/nvim-web-devicons'
 
   use {"ellisonleao/glow.nvim", config = function() require("glow").setup() end}
-
-  use {'romgrk/barbar.nvim', requires = 'nvim-web-devicons'}
+  use {'akinsho/bufferline.nvim', tag = "v3.*", requires = 'nvim-tree/nvim-web-devicons'}
+ -- use {'romgrk/barbar.nvim', requires = 'nvim-web-devicons'}
 
   use {
     'goolord/alpha-nvim',
