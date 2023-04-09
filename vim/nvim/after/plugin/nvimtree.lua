@@ -17,7 +17,7 @@ require("nvim-tree").setup({
 })
 
 vim.keymap.set("n", "<leader>e", vim.cmd.NvimTreeToggle)
-vim.keymap.set("n", "<leader>g", vim.cmd.NvimTreeFocus)
+-- vim.keymap.set("n", "<leader>g", vim.cmd.NvimTreeFocus)
 
 vim.keymap.set("n", "<C-Left>", ":NvimTreeResize -3<CR>")
 vim.keymap.set("n", "<C-Right>", ":NvimTreeResize +3<CR>")
