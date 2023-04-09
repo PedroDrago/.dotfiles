@@ -11,6 +11,7 @@
 
 ## Nvim-tree
 `<leader>e` - Focus Nvim-tree
+
 `<leader>q` - Close tree when focused
 `n` - New file
 `d` - Delete file
