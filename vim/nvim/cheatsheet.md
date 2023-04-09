@@ -1,12 +1,16 @@
 ## Moves
+`{` - paragraph up
+`}` - paragraph down
+
 
 
 ## Edit
 `<leader>s` - Replace all occurrences of current word
 
 `<leader>x` - Turns current file into executable
-
-
+`dw` - delete word infront?
+`db` - delete word behind
+ 
 ## Select
 
 
