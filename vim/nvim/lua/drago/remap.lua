@@ -14,5 +14,3 @@ vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><
 --auto transforms script into executable
 vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })
 
---leader+h focus on last focused window
-vim.keymap.set("n", "<leader>h" ,"<c-w><c-p>")

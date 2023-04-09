@@ -4,21 +4,17 @@
 vim.cmd [[packadd packer.nvim]]
 
 return require('packer').startup(function(use)
-  -- Packer can manage itself
   use 'wbthomason/packer.nvim'
   use "machakann/vim-highlightedyank"
   use "terrortylor/nvim-comment"
-
   use {'ojroques/nvim-bufdel'}
-
-  -- use 'RRethy/vim-illuminate'
-
+  use {'tpope/vim-fugitive'}
   use "olimorris/onedarkpro.nvim"
-
   use 'kyazdani42/nvim-web-devicons'
-  use {"ellisonleao/glow.nvim", config = function() require("glow").setup() end}
+  use {'arkav/lualine-lsp-progress'}
+  use {'nvim-lua/lsp-status.nvim'}
+
   use {'akinsho/bufferline.nvim', tag = "v3.*", requires = 'nvim-tree/nvim-web-devicons'}
- -- use {'romgrk/barbar.nvim', requires = 'nvim-web-devicons'}
 
   use {
     'goolord/alpha-nvim',
@@ -28,7 +24,6 @@ return require('packer').startup(function(use)
     end
     }
 
-  use {'tpope/vim-fugitive'}
   use('nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'} )
 
   use {
@@ -45,42 +40,35 @@ return require('packer').startup(function(use)
       require("toggleterm").setup()
   end}
 
-  
   use {
       'nvim-tree/nvim-tree.lua',
       requires = {
-          'nvim-tree/nvim-web-devicons', 
+          'nvim-tree/nvim-web-devicons',
       },
       config = function()
           require("nvim-tree").setup {}
       end
   }
 
-  use {'arkav/lualine-lsp-progress'}
-  use {'nvim-lua/lsp-status.nvim'}
 
   use {
       'VonHeikemen/lsp-zero.nvim',
       branch = 'v2.x',
       requires = {
-          {'neovim/nvim-lspconfig'},             
-          {                                      
+          {'neovim/nvim-lspconfig'},
+          {
           'williamboman/mason.nvim',
           run = function()
               pcall(vim.cmd, 'MasonUpdate')
           end,
       },
-      {'williamboman/mason-lspconfig.nvim'}, 
-
-      -- Autocompletion
-      {'hrsh7th/nvim-cmp'},     
-      {'hrsh7th/cmp-nvim-lsp'}, 
-      {'L3MON4D3/LuaSnip'},     
+      {'williamboman/mason-lspconfig.nvim'},
+      {'hrsh7th/nvim-cmp'},
+      {'hrsh7th/cmp-nvim-lsp'},
+      {'L3MON4D3/LuaSnip'},
   }
 }
 
-  --end,
-  requires = {'nvim-tree/nvim-web-devicons'}
 
 
 
