@@ -6,20 +6,18 @@ vim.cmd [[packadd packer.nvim]]
 return require('packer').startup(function(use)
   -- Packer can manage itself
   use 'wbthomason/packer.nvim'
-    
   use "machakann/vim-highlightedyank"
-    
   use "terrortylor/nvim-comment"
 
-  use 'RRethy/vim-illuminate'
+  use {'ojroques/nvim-bufdel'}
+
+  -- use 'RRethy/vim-illuminate'
 
   use "olimorris/onedarkpro.nvim"
 
   use 'kyazdani42/nvim-web-devicons'
-
   use {"ellisonleao/glow.nvim", config = function() require("glow").setup() end}
-
-  use {'romgrk/barbar.nvim', requires = 'nvim-web-devicons'}
+  use {'akinsho/bufferline.nvim', tag = "v3.*", requires = 'nvim-tree/nvim-web-devicons'}
 
   use {
     'goolord/alpha-nvim',
@@ -30,7 +28,6 @@ return require('packer').startup(function(use)
     }
 
   use {'tpope/vim-fugitive'}
-  
   use('nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'} )
 
   use {
@@ -57,6 +54,9 @@ return require('packer').startup(function(use)
           require("nvim-tree").setup {}
       end
   }
+
+  use {'arkav/lualine-lsp-progress'}
+  use {'nvim-lua/lsp-status.nvim'}
 
   use {
       'VonHeikemen/lsp-zero.nvim',

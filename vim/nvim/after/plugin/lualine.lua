@@ -20,9 +20,9 @@ require('lualine').setup {
   sections = {
     lualine_a = {'mode'},
     lualine_b = {'branch', 'diff', 'diagnostics'},
-    lualine_c = {'filename'},
-    lualine_x = {'filetype'},
-    lualine_y = {'progress'},
+    lualine_c = { 'filename'},
+    lualine_x = { "require'lsp-status'.diagnostics()", 'filetype'},
+    lualine_y = { 'progress'},
     lualine_z = {}
   },
   inactive_sections = {
@@ -38,5 +38,6 @@ require('lualine').setup {
   inactive_winbar = {},
   extensions = {'nvim-tree', 'fugitive', 'toggleterm'}
 }
+
 
 
