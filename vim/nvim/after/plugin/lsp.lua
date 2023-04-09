@@ -33,16 +33,17 @@ cmp.setup({
 })
 
 -- Toggle Diagnostic of LSP
-local diagnostics_active = true
+DIAGNOSTICS_ACTIVE = true
 vim.keymap.set('n', '<leader>l', function()
-  diagnostics_active = not diagnostics_active
-  if diagnostics_active then
+  DIAGNOSTICS_ACTIVE = not DIAGNOSTICS_ACTIVE
+  if DIAGNOSTICS_ACTIVE then
     vim.diagnostic.show()
+    DIAGNOSTIC_STRING = "LSP: On"
   else
+    DIAGNOSTIC_STRING = "LSP: Off"
     vim.diagnostic.hide()
   end
 end)
-
 
 
 -- vim.keymap.set("n", "<leader>l", ":LspToggle<CR>")
