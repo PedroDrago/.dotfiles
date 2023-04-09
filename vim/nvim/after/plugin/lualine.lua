@@ -1,3 +1,4 @@
+
 require('lualine').setup {
   options = {
     icons_enabled = true,
@@ -20,8 +21,8 @@ require('lualine').setup {
   sections = {
     lualine_a = {'mode'},
     lualine_b = {'branch', 'diff', 'diagnostics'},
-    lualine_c = { 'filename'},
-    lualine_x = { 'filetype'},
+    lualine_c = {},
+    lualine_x = { 'lsp_progress' , 'filetype'},
     lualine_y = { 'DIAGNOSTIC_STRING','progress'},
     lualine_z = {}
   },

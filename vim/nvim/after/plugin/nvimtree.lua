@@ -25,4 +25,4 @@ local api = require('nvim-tree.api')
 
 
 --:h nvim-tree (DEFAULT MAPPINGS 6.1 [ON_ATTACH])
-vim.keymap.set('n', 'n', api.fs.create)
+-- vim.keymap.set('n', 'n', api.fs.create)

@@ -32,22 +32,28 @@ cmp.setup({
   }
 })
 
+
+-- Currently useless, but someday i figure out how to use this to display LSP name, maybe looking on lunarvim configurations
+local buf_clients = vim.lsp.buf_get_clients()
+for _, client in pairs(buf_clients) do
+    CURRENT_LSP = client.name
+end
+
+
 -- Toggle Diagnostic of LSP
 DIAGNOSTICS_ACTIVE = true
-DIAGNOSTIC_STRING = true
+DIAGNOSTIC_STRING = "On"
 vim.keymap.set('n', '<leader>l', function()
   DIAGNOSTICS_ACTIVE = not DIAGNOSTICS_ACTIVE
   if DIAGNOSTICS_ACTIVE then
+        DIAGNOSTIC_STRING = "On"
     vim.diagnostic.show()
-    DIAGNOSTIC_STRING = "LSP: On"
   else
-    DIAGNOSTIC_STRING = "LSP: Off"
+      DIAGNOSTIC_STRING = "Off"
     vim.diagnostic.hide()
   end
 end)
 
-
--- vim.keymap.set("n", "<leader>l", ":LspToggle<CR>")
 
 
 
