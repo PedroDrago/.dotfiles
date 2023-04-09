@@ -1,9 +1,6 @@
 vim.opt.termguicolors = true
 
-<<<<<<< HEAD
-=======
 -- background = #282C34
->>>>>>> 87e9a62df557a91714cd2a75beb1af129fb95119
 require('bufferline').setup {
     highlights = {
         background = {
@@ -29,21 +26,15 @@ require('bufferline').setup {
                 {
                     filetype = "packer",
                     text = "Packer",
-<<<<<<< HEAD
-=======
                     -- text_align = "left" | "center" | "right"
                     -- separator = true,
->>>>>>> 87e9a62df557a91714cd2a75beb1af129fb95119
                     padding = 1,
                     highlight = "PanelHeading"
                 },
                 {
                     filetype = "NvimTree",
                     text = "Explorer",
-<<<<<<< HEAD
-=======
                     -- text_align = "left" | "center" | "right"
->>>>>>> 87e9a62df557a91714cd2a75beb1af129fb95119
                     separator = true,
                     padding = 0,
                     highlight = "PanelHeading"
@@ -54,13 +45,9 @@ require('bufferline').setup {
             show_close_icon = false,
             numbers = "ordinal",
             diagnostics = "nvim_lsp",
-<<<<<<< HEAD
-            separator_style = {"|", "|"},
-=======
             -- separator_style = "thin", -- "slant" | "slope" | "thick" | "thin" | { 'any', 'any' 
             separator_style = {"|", "|"},
             -- indicator = { icon = "", style = ""},
->>>>>>> 87e9a62df557a91714cd2a75beb1af129fb95119
             left_trunc_marker = "",
             right_trunc_marker = "",
             persist_buffer_sort = true,
@@ -68,13 +55,8 @@ require('bufferline').setup {
             buffer_close_icon = '',
             color_icons = true,
             max_name_length = 18,
-<<<<<<< HEAD
-            max_prefix_length = 15,
-            truncate_names = true,
-=======
             max_prefix_length = 15, -- prefix used when a buffer is de-duplicated
             truncate_names = true, -- whether or not tab names should be truncated
->>>>>>> 87e9a62df557a91714cd2a75beb1af129fb95119
         }
     }
 -- keymap for jumping to buffers
@@ -86,8 +68,5 @@ end
 -- jump to last tab
 vim.keymap.set("n", "<leader>0", function() require("bufferline").go_to_buffer(-1, true) end)
 
-<<<<<<< HEAD
 vim.keymap.set("n", "<C-w>", ":BufDel<CR>")
-=======
 
->>>>>>> 87e9a62df557a91714cd2a75beb1af129fb95119
