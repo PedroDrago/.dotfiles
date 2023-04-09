@@ -1,33 +1,36 @@
-#for each files which have to stay in $HOME
-# stow --adopt -v file_with_configs
-
+#each .dotfile have to be checked existence, and if exists: deleted
 if test -f "$HOME/.zshrc"; then
   rm $HOME/.zshrc
+fi
+
+if test -f "$HOME/.gitconfig"; then
+  rm $HOME/.gitconfig
 fi
 
 if test -f "$HOME/.p10k.zsh"; then
   rm $HOME/.p10k.zsh
 fi
 
-if test -f "$HOME/.config/i3/config";then
-  rm $HOME/.config/i3/config
+if test -d "$HOME/.config/nvim";then
+  rm -rf $HOME/.config/nvim
 fi
 
-if test -f "$HOME/.config/alacritty/alacritty.yml";then
-  rm $HOME/.config/alacritty/alacritty.yml
+if test -d "$HOME/.config/i3";then
+  rm -rf $HOME/.config/i3
 fi
 
+if test -d "$HOME/.config/alacritty";then
+  rm -rf $HOME/.config/alacritty
+fi
+#for each file that need to stay in home
 stow --adopt -v zsh
 stow --adopt -v git
 
-#for each file which have to stay in .config
-# stow --adopt --target=$HOME/target_directory -v file_with_configs    
-stow --adopt --target=$HOME/.config/i3 -v i3 
-stow --adopt --target=$HOME/.config/alacritty -v alacritty
+#for each directory which have to stay in .config
+stow --adopt --target=$HOME/.config -v i3wm
+stow --adopt --target=$HOME/.config -v alacritty
+stow --adopt --target=$HOME/.config -v vim
 sudo stow --adopt --target=/usr/bin -v scripts
 
-
-#each .dotfile have to be checked existence, and if exists: deleted. the following code does that
-#if test -f "";then
-# rm
-#if
+#STOW REFACTOR: .dotfiles located in .config, and stow once files that need to stay in .config, and stow twice files that need to stay in $HOME.
+#STOW REFACTOR: make array with files and iterate array doing rm -rf in each item.
