@@ -16,7 +16,6 @@
  
 ## Select
 
-
 ## Nvim-tree
 `<leader>e` - Focus Nvim-tree
 
