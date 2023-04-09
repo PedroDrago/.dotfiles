@@ -34,6 +34,7 @@ cmp.setup({
 
 -- Toggle Diagnostic of LSP
 DIAGNOSTICS_ACTIVE = true
+DIAGNOSTIC_STRING = true
 vim.keymap.set('n', '<leader>l', function()
   DIAGNOSTICS_ACTIVE = not DIAGNOSTICS_ACTIVE
   if DIAGNOSTICS_ACTIVE then
