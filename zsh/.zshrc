@@ -33,6 +33,7 @@ alias t='tmux'
 alias ur='update_repos'
 alias vim='nvim'
 alias c='clear'
+alias v='vim'
 #makes cd ls after
 function chpwd(){
   emulate -L zsh
