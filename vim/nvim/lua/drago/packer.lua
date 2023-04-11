@@ -21,8 +21,6 @@ return require('packer').startup(function(use)
   use {'tpope/vim-fugitive'}
   use "olimorris/onedarkpro.nvim"
   use 'kyazdani42/nvim-web-devicons'
-  use {'arkav/lualine-lsp-progress'}
-  use {'nvim-lua/lsp-status.nvim'}
   use {'ThePrimeagen/vim-be-good'}
 
   use {'akinsho/bufferline.nvim', tag = "v3.*", requires = 'nvim-tree/nvim-web-devicons'}

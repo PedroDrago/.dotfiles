@@ -26,6 +26,7 @@ lsp.ensure_installed({
 
 local cmp = require('cmp')
 
+-- set enter to confirm LSP completion
 cmp.setup({
   mapping = {
     ['<CR>'] = cmp.mapping.confirm({select = false}),
@@ -33,20 +34,7 @@ cmp.setup({
 })
 
 
-
-
-
-
-
-
-
--- Currently useless, but someday i figure out how to use this to display LSP name, maybe looking on lunarvim configurations
-local buf_clients = vim.lsp.buf_get_clients()
-for _, client in pairs(buf_clients) do
-    CURRENT_LSP = client.name
-end
-
--- Toggle Diagnostic of LSP
+-- Create Toggle Diagnostic of LSP function and mapping
 DIAGNOSTICS_ACTIVE = true
 DIAGNOSTIC_STRING = "On"
 vim.keymap.set('n', '<leader>l', function()
@@ -58,19 +46,6 @@ vim.keymap.set('n', '<leader>l', function()
       DIAGNOSTIC_STRING = "Off"
     vim.diagnostic.hide()
   end
-end)
-
-local cmp_mappings = lsp.defaults.cmp_mappings({
-    ['<C-y'] = cmp.mapping.confirm({ select = true }),
-    ["<C-Space>"] = cmp.mapping.complete() 
-}
-)
-lsp.setup_nvim_cmp({ mapping = cmp_mappings })
-
-lsp.on_attach(function(client, bufnr)
-    local opts = {buffer = bufnr, remap = false}
-
-    vim.keymap.set("i", "<C-h>", function() vim.lsp.buf.signature_help() end, opts)
 end)
 
 lsp.setup()

@@ -1,6 +1,5 @@
 vim.opt.termguicolors = true
 
--- background = #282C34
 require('bufferline').setup {
     highlights = {
         background = {
@@ -26,15 +25,12 @@ require('bufferline').setup {
                 {
                     filetype = "packer",
                     text = "Packer",
-                    -- text_align = "left" | "center" | "right"
-                    -- separator = true,
                     padding = 1,
                     highlight = "PanelHeading"
                 },
                 {
                     filetype = "NvimTree",
                     text = "Explorer",
-                    -- text_align = "left" | "center" | "right"
                     separator = true,
                     padding = 0,
                     highlight = "PanelHeading"
@@ -45,9 +41,7 @@ require('bufferline').setup {
             show_close_icon = false,
             numbers = "ordinal",
             diagnostics = "nvim_lsp",
-            -- separator_style = "thin", -- "slant" | "slope" | "thick" | "thin" | { 'any', 'any' 
             separator_style = {"|", "|"},
-            -- indicator = { icon = "", style = ""},
             left_trunc_marker = "",
             right_trunc_marker = "",
             persist_buffer_sort = true,
@@ -59,6 +53,8 @@ require('bufferline').setup {
             truncate_names = true, -- whether or not tab names should be truncated
         }
     }
+
+
 -- keymap for jumping to buffers
 for i = 1, 9 do
   vim.keymap.set("n", "<leader>" .. i, function()
@@ -67,6 +63,5 @@ for i = 1, 9 do
 end
 -- jump to last tab
 vim.keymap.set("n", "<leader>0", function() require("bufferline").go_to_buffer(-1, true) end)
-
 vim.keymap.set("n", "<C-w>", ":BufDel<CR>")
 
