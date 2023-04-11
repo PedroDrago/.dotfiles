@@ -37,10 +37,6 @@ alias vim='nvim'
 alias c='clear'
 alias v='vim'
 #makes cd ls after
-function chpwd(){
-  emulate -L zsh
-  ls
-}
 #------------------------KEYBINDINGS--------------------------------------
 bindkey -s '^F' 'tmux-windownizer\n'
 bindkey -s '^@' '^B'
