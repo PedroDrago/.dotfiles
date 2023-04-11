@@ -28,6 +28,7 @@ source $ZSH/oh-my-zsh.sh
 #------------------------------ALIASES|MACROS-----------------------------
 alias ls='exa --icons'
 alias bat='bat --style=auto'
+alias grep='rg'
 alias q='exit'
 alias telegram='/opt/telegram/telegram' #for dmenu i guess? don't remember at all.
 alias t='tmux'
