@@ -11,7 +11,7 @@ window_name=$(basename $current_path | tr . _)
 
 # if the path is for a directory, create a tmux window inside that directory, with the name of the directory
 if [[ -d $current_path ]]; then
-    tmux select-window -t $window_name || tmux new-window -c $current_path -n "$window_name"
+    tmux select-window -t $window_name || tmux new-window -c $current_path -n "[/$window_name]"
 
 #if the path is for a file, create a tmux window inside that directory, with the name of the file and NVIM that file
 elif [[ -f $current_path ]]; then
