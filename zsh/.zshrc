@@ -39,6 +39,14 @@ function chpwd(){
   emulate -L zsh
   ls
 }
+#------------------------KEYBINDINGS--------------------------------------
+bindkey -s '^F' 'tmux-windownizer\n'
+bindkey -s '^@' '^B'
+# bindkey -s '^@' 'tmux select-window -t 2\n'
+# bindkey -s '^[' 'tmux select-window -t 3\n'
+# bindkey -s '^\' 'tmux select-window -t 4\n'
+# bindkey -s '^]' 'tmux select-window -t 5\n'
+# bindkey -s '^^' 'tmux select-window -t 6\n'
 #-------------------------------------------------------------------------
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.

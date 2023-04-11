@@ -2,6 +2,10 @@
 require("drago.set")
 require("drago.remap")
 
+--fix tmux color issues with vim
+-- vim.o.termguicolors = true
+-- vim.cmd'colorscheme onedark'
+
 -- This allways source packer.lua on startup. It makes packer don't bug
 vim.cmd([[ so ~/.config/nvim/lua/drago/packer.lua ]])
 

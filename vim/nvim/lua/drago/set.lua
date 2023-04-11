@@ -25,5 +25,6 @@ vim.opt.scrolloff = 10
 
 vim.opt.updatetime = 50
 
+vim.opt.background='dark'
 
 --vim.opt.colorcolumn = "160"

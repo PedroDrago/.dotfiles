@@ -1,0 +1,24 @@
+#!/usr/bin/env bash
+
+#make a fzf only within 1 range in [home, home/repos, home/local] and stores that whole path in a variable
+current_path=$(find ~ ~/repos ~/local -d -mindepth 1 -maxdepth 1 | fzf)
+#stores the path without the last portion (file or dir)
+dir_name=$(dirname $current_path) 
+#stores only the last portion of the path (file or dir)
+window_name=$(basename $current_path | tr . _)
+# current_windows=$(tmux list-windows)
+
+
+# if the path is for a directory, create a tmux window inside that directory, with the name of the directory
+if [[ -d $current_path ]]; then
+    tmux new-window -c $current_path -n "$window_name"
+#if the path is for a file, create a tmux window inside that directory, with the name of the file and NVIM that file
+elif [[ -f $current_path ]]; then
+    tmux new-window -c $dir_name -n "VIM:$window_name"
+    window_index=$(tmux display-message -p -F '#{window_index}')
+    tmux send-keys -t $window_index "nvim $current_path" Enter
+fi
+
+# to-do:
+#1: detect if there is already a window with that name, and if there is, instead of making the actions above, just jump to that window
+#2: if tmux not initialized, initialize it
