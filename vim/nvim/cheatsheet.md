@@ -19,7 +19,9 @@
 `dw` - delete word infront?
 
 `db` - delete word behind
- 
+
+`cw` - delete current word and enter insert mode (substituting word)
+
 ## Select
 
 ## Nvim-tree
