@@ -8,13 +8,16 @@
 `control+u` - Bottom of file (`G` also works)
 
 `A` - End of line entering insert (`$` end of line remaining normal)
+
 `I` - Start of the line entering insert (`0` end of line remaining normal)
 
 ## Edit
 `<leader>s` - Replace all occurrences of current word
 
 `<leader>x` - Turns current file into executable
+
 `dw` - delete word infront?
+
 `db` - delete word behind
  
 ## Select
