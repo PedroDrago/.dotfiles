@@ -25,6 +25,7 @@ fi
 #for each file that need to stay in home
 stow --adopt -v zsh
 stow --adopt -v git
+stow --adopt -v tmux
 #stow -D dir (ex: stow -D git) //to unstow
 
 
