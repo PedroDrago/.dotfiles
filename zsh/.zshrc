@@ -5,6 +5,8 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
+export FZF_DEFAULT_COMMAND='fd --type f --color=always --exclude .git --ignore-file ~/.gitignore'
+
 #----------------------------------PATHS----------------------------------
 path+=~/.local/bin
 export path
@@ -26,7 +28,7 @@ plugins=(git asdf z zsh-autosuggestions zsh-syntax-highlighting)
 source $ZSH/oh-my-zsh.sh
 
 #------------------------------ALIASES|MACROS-----------------------------
-alias ls='exa --icons'
+# alias ls='exa --icons'
 alias bat='bat --style=auto'
 alias grep='rg'
 alias q='exit'
