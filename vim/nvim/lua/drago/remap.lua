@@ -5,7 +5,7 @@ vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 
 --control+s to save and leader+q to quit
-vim.keymap.set("n", "<leader>q", vim.cmd.q)
+vim.keymap.set("n", "<leader>q", ":qa!<CR>")
 vim.keymap.set("n", "<C-s>", vim.cmd.w)
 
 --renaming all occurrences of current 
