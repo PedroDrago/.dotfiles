@@ -30,22 +30,13 @@ local cmp = require('cmp')
 cmp.setup({
   mapping = {
     ['<CR>'] = cmp.mapping.confirm({select = false}),
-  }
+  },
+  -- sources = {
+  --     name = "buffer",
+  --     max_item_count = 1
+  -- }
 })
 
-
--- Create Toggle Diagnostic of LSP function and mapping
-DIAGNOSTICS_ACTIVE = true
-DIAGNOSTIC_STRING = "On"
-vim.keymap.set('n', '<leader>l', function()
-  DIAGNOSTICS_ACTIVE = not DIAGNOSTICS_ACTIVE
-  if DIAGNOSTICS_ACTIVE then
-        DIAGNOSTIC_STRING = "On"
-    vim.diagnostic.show()
-  else
-      DIAGNOSTIC_STRING = "Off"
-    vim.diagnostic.hide()
-  end
-end)
+-- vim.g.pumheight = 10
 
 lsp.setup()

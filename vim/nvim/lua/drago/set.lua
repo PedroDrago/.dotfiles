@@ -8,6 +8,7 @@ vim.opt.shiftwidth = 4
 vim.opt.expandtab = true
 
 --vim.opt.guicursor = ""
+vim.opt.pumheight = 25
 
 vim.opt.smartindent = true
 
