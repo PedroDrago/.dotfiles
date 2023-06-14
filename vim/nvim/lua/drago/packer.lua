@@ -22,6 +22,9 @@ return require('packer').startup(function(use)
   use "olimorris/onedarkpro.nvim"
   use 'kyazdani42/nvim-web-devicons'
   use {'ThePrimeagen/vim-be-good'}
+  use 'alvan/vim-closetag'
+  use 'mattn/emmet-vim'
+  use 'AndrewRadev/tagalong.vim'
 
   use {'akinsho/bufferline.nvim', tag = "v3.*", requires = 'nvim-tree/nvim-web-devicons'}
 

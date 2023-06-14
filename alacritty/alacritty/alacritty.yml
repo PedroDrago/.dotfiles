@@ -39,4 +39,5 @@ env:
 font:
   normal:
     family: "MesloLGS NF"
+    # family: "IntelOne Mono"
   size: 12.0
