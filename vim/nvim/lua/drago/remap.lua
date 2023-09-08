@@ -1,5 +1,9 @@
 vim.g.mapleader = " "
 
+--***********************************************************************************************************
+-- i want to remap capital Q to do the same thing as lower q, and capital W to do the same thing as lower w.
+--***********************************************************************************************************
+
 --Move a selected block up and down
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")

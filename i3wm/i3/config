@@ -20,9 +20,8 @@ exec_always --no-startup-id feh --bg-fill ~/.config/i3/desktop_purple_mountain.p
 
 #-----------WORKSPACES OUTPUTS-----------------
 # create monitors variables
-SET $primary_monitor HDMI-0
-SET $secondary_monitor DP-0
-
+SET $primary_monitor DP-0
+SET $secondary_monitor HDMI-0
 
 # creat workspaces variables
 set $ws1 "1"
