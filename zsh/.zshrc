@@ -11,7 +11,7 @@ export FZF_DEFAULT_COMMAND='fd --type f --color=always --exclude .git --ignore-f
 path+=~/.local/bin
 export path
 
-path+='/home/drago/.asdf/installs/rust/1.67.1/bin/'
+path+='/home/drago/.asdf/installs/rust/1.71.0/bin/'
 export path
 
 export ZSH="$HOME/.oh-my-zsh"
@@ -19,6 +19,8 @@ export ZSH="$HOME/.oh-my-zsh"
 path+="$HOME/dotnet"
 export DOTNET_ROOT=$HOME/dotnet
 
+export MAIL="pdrago@student.42.rio"
+export USER="pdrago"
 #-----------------------------------ZSH-----------------------------------
 
 ZSH_THEME="powerlevel10k/powerlevel10k"
@@ -30,14 +32,17 @@ source $ZSH/oh-my-zsh.sh
 #------------------------------ALIASES|MACROS-----------------------------
 # alias ls='exa --icons'
 alias bat='bat --style=auto'
+alias ccf='cc -Wall -Wextra -Werror'
 alias grep='rg'
 alias q='exit'
 alias telegram='/opt/telegram/telegram' #for dmenu i guess? don't remember at all.
 alias t='tmux'
 alias ur='update_repos'
-alias vim='nvim'
+#alias vim='nvim'
 alias c='clear'
-alias v='vim'
+#alias v='vim'
+alias lsi='exa --icons'
+alias norm='~/.asdf/installs/python/3.11.4/bin/./norminette'
 #------------------------KEYBINDINGS--------------------------------------
 bindkey -s '^F' 'tmux-windownizer\n'
 bindkey -s '^@' '^B'
@@ -47,8 +52,10 @@ bindkey -s '^@' '^B'
 # bindkey -s '^]' 'tmux select-window -t 5\n'
 # bindkey -s '^^' 'tmux select-window -t 6\n'
 #-------------------------------------------------------------------------
-
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+
+# ./.monitors
+
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
