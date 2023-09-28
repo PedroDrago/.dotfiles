@@ -29,3 +29,4 @@ vim.opt.updatetime = 50
 vim.opt.background='dark'
 
 --vim.opt.colorcolumn = "160"
+vim.cmd('autocmd FileType c,cpp,java setlocal smarttab')

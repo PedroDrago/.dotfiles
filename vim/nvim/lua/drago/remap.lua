@@ -4,15 +4,18 @@ vim.g.mapleader = " "
 -- i want to remap capital Q to do the same thing as lower q, and capital W to do the same thing as lower w.
 --***********************************************************************************************************
 
---Move a selected block up and down
+--  Move a selected block up and down
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 
---control+s to save and leader+q to quit
+--  B to enter visual block mode
+vim.keymap.set("n", "B", "<C-v>")
+
+--  control+s to save and leader+q to quit
 vim.keymap.set("n", "<leader>q", ":qa!<CR>")
 vim.keymap.set("n", "<C-s>", vim.cmd.w)
 
---renaming all occurrences of current 
+--  renaming all occurrences of current 
 vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
 
 --auto transforms script into executable
@@ -36,5 +39,5 @@ vim.keymap.set("n", "<leader>Y", "\"+Y")
 vim.keymap.set("n", "<leader>d", "\"_d")
 vim.keymap.set("v", "<leader>d", "\"_d")
 
-
+-- Remove recording shit
 vim.keymap.set("n", "Q", "<nop>")
