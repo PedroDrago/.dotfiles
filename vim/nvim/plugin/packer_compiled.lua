@@ -211,6 +211,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/drago/.local/share/nvim/site/pack/packer/start/vim-highlightedyank",
     url = "https://github.com/machakann/vim-highlightedyank"
+  },
+  ["vim-startuptime"] = {
+    loaded = true,
+    path = "/home/drago/.local/share/nvim/site/pack/packer/start/vim-startuptime",
+    url = "https://github.com/dstein64/vim-startuptime"
   }
 }
 

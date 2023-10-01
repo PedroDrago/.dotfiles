@@ -28,6 +28,7 @@ return require('packer').startup(function(use)
   use '42Paris/42header'
 
   use {'akinsho/bufferline.nvim', tag = "v3.*", requires = 'nvim-tree/nvim-web-devicons'}
+  use {'dstein64/vim-startuptime'}
 
   use {
     'goolord/alpha-nvim',
