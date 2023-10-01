@@ -30,18 +30,16 @@ plugins=(git asdf z zsh-autosuggestions zsh-syntax-highlighting)
 source $ZSH/oh-my-zsh.sh
 
 #------------------------------ALIASES|MACROS-----------------------------
-# alias ls='exa --icons'
-alias vim='nvim'
 alias bat='bat --style=auto'
 alias ccf='cc -Wall -Wextra -Werror'
 alias grep='rg'
 alias q='exit'
-alias telegram='/opt/telegram/telegram' #for dmenu i guess? don't remember at all.
 alias t='tmux'
 alias ur='update_repos'
 alias c='clear'
 alias lsi='exa --icons'
-alias norm='~/.asdf/installs/python/3.11.4/bin/./norminette'
+alias norminette='~/.asdf/installs/python/3.11.4/bin/./norminette'
+alias vim='nvim'
 #------------------------KEYBINDINGS--------------------------------------
 bindkey -s '^F' 'tmux-windownizer\n'
 bindkey -s '^@' '^B'
