@@ -37,7 +37,7 @@ alias q='exit'
 alias t='tmux'
 alias ur='update_repos'
 alias c='clear'
-alias lsi='exa --icons'
+alias ls='exa --icons'
 alias norminette='~/.asdf/installs/python/3.11.4/bin/./norminette'
 alias vim='nvim'
 #------------------------KEYBINDINGS--------------------------------------
