@@ -3,8 +3,7 @@ vim.g.maplocalleader = ' '
 
 require("set")
 require("remap")
-
--- Install package manager
+-- Install package manage
 local lazypath = vim.fn.stdpath 'data' .. '/lazy/lazy.nvim'
 if not vim.loop.fs_stat(lazypath) then
   vim.fn.system {
@@ -37,6 +36,12 @@ require('lazy').setup({
   -- Toggle Terminal PLugin
   {'akinsho/toggleterm.nvim', version = "*", opts = {--[[ things you want to change go here]]}},
 
+  {
+    'goolord/alpha-nvim',
+    config = function ()
+        require'alpha'.setup(require'alpha.themes.dashboard'.config)
+    end
+  },
   -- LSP Configuration & Plugins
   {
 
@@ -154,6 +159,38 @@ require('lazy').setup({
   },
 
 }, {})
+
+
+--ALPHA
+local dashboard = require("alpha.themes.dashboard")
+
+dashboard.section.header.val = {
+    "                                                     ",
+    "  ███╗   ██╗███████╗ ██████╗ ██╗   ██╗██╗███╗   ███╗ ",
+    "  ████╗  ██║██╔════╝██╔═══██╗██║   ██║██║████╗ ████║ ",
+    "  ██╔██╗ ██║█████╗  ██║   ██║██║   ██║██║██╔████╔██║ ",
+    "  ██║╚██╗██║██╔══╝  ██║   ██║╚██╗ ██╔╝██║██║╚██╔╝██║ ",
+    "  ██║ ╚████║███████╗╚██████╔╝ ╚████╔╝ ██║██║ ╚═╝ ██║ ",
+    "  ╚═╝  ╚═══╝╚══════╝ ╚═════╝   ╚═══╝  ╚═╝╚═╝     ╚═╝ ",
+    "                                                     ",
+}
+
+
+dashboard.section.buttons.val = {
+    dashboard.button( "e", "  > New file" , ":ene <BAR> startinsert <CR>"),
+    dashboard.button( "f", "  > Find file", ":cd $HOME | Telescope find_files<CR>"),
+    dashboard.button( "r", "  > Recent"   , ":Telescope oldfiles<CR>"),
+    dashboard.button( "d", "  > Dotfiles" , ":cd ~/.config/nvim | :e init.lua<CR>"),
+    dashboard.button( "l", "󰒲 > Lazy" , ":Lazy<CR>"),
+}
+
+dashboard.section.header.opts.hl = "Function"
+
+-- Disable folding on alpha buffer
+vim.cmd([[
+    autocmd FileType alpha setlocal nofoldenable
+]])
+
 
 -- [[ Highlight on yank ]]
 local highlight_group = vim.api.nvim_create_augroup('YankHighlight', { clear = true })
