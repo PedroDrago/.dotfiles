@@ -22,6 +22,8 @@ require('lazy').setup({
   'tpope/vim-fugitive',
   'tpope/vim-rhubarb',
 
+  --icons
+  'nvim-tree/nvim-web-devicons',
   -- Detect tabstop and shiftwidth automatically
   'tpope/vim-sleuth',
 
