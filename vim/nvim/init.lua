@@ -1,6 +1,6 @@
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
-
+vim.loader.enable()
 require("set")
 require("remap")
 -- Install package manage
@@ -21,7 +21,7 @@ require('lazy').setup({
   -- Git related plugins
   'tpope/vim-fugitive',
   'tpope/vim-rhubarb',
-
+  'iamcco/markdown-preview.nvim',
   --icons
   'nvim-tree/nvim-web-devicons',
   -- Detect tabstop and shiftwidth automatically

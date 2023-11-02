@@ -38,7 +38,7 @@ vim.o.termguicolors = true
 -- MINE
 vim.wo.relativenumber = true
 vim.wo.scrolloff = 10
+vim.wo.sidescrolloff = 20
 vim.o.hlsearch = false
 vim.o.incsearch = true
 vim.o.wrap = false
-

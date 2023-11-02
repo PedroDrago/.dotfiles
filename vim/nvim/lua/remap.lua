@@ -17,14 +17,6 @@ vim.keymap.set("n", "<C-u>", "<C-u>zz")
 vim.keymap.set("n", "n", "nzzzv")
 vim.keymap.set("n", "N", "Nzzzv")
 
--- paste when idk whats happening
-vim.keymap.set("x", "<leader>p", "\"_dP")
-
--- copy to clipboard instead of vim
-vim.keymap.set("n", "<leader>y", "\"+y")
-vim.keymap.set("v", "<leader>y", "\"+y")
-vim.keymap.set("n", "<leader>Y", "\"+Y")
-
 -- delete without yanking
 vim.keymap.set("n", "<leader>d", "\"_d")
 vim.keymap.set("v", "<leader>d", "\"_d")
@@ -47,3 +39,6 @@ vim.keymap.set("n", "<leader>t", ":ToggleTerm dir=pwd direction=float <CR>")
 vim.keymap.set("n", "<leader>v", ":ToggleTerm size=100 dir=pwd direction=vertical <CR>")
 -- Exit terminal Mode
 vim.keymap.set('t', '<esc>', [[<C-\><C-n>]])
+
+
+vim.keymap.set('n', "<leader>c", ":lua vim.lsp.buf.code_action()<CR>")
