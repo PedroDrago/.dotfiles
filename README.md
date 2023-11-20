@@ -1,8 +1,7 @@
 ### To-do
 
-- Separate dotfiles for my desktop and for my laptop in different directories in the root. Each directory with its owns dotfiles and stowscript. On root, set a main script
-for running and choosing which config shall be used.
-
+- on next installation, before running something, move every current config that is in repository root to /desktop and thest desktop_stow_script.
+- fill /laptop with laptol .dotfiles and test laptop_stow_script
 
 
 ### Kickstart
