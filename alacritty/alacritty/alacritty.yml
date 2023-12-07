@@ -8,8 +8,11 @@ colors:
    magenta: '#b294bb'
    cyan:    '#70c0b1'
    white:   '#c5c8c6'
+  # primary:
+  #   background: '#0D1117'
 env:
   TERM: xterm-256color
+
   # bright:
   #  black:   '#666666'
   #  red:     '#d54e53'

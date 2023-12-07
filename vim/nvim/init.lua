@@ -21,10 +21,11 @@ vim.opt.rtp:prepend(lazypath)
 require('lazy').setup({
   -- Git related plugins
   'tpope/vim-fugitive',
-  'tpope/vim-rhubarb',
-  'iamcco/markdown-preview.nvim',
+  'tpope/vim-rhubarb', --:GBrowse: opens current repository and current file in github/gitlab in browser
   --icons
   'nvim-tree/nvim-web-devicons',
+  {'folke/which-key.nvim', opts = {} },
+
   -- Detect tabstop and shiftwidth automatically
   'tpope/vim-sleuth',
   {
@@ -38,8 +39,6 @@ require('lazy').setup({
       require("nvim-tree").setup {}
     end,
   },
-
-  -- Manage vim sessions
 
   -- 42 Header Plugin
   '42Paris/42header',
@@ -343,7 +342,7 @@ local on_attach = function(_, bufnr)
 
   nmap('gd', vim.lsp.buf.definition, '[G]oto [D]efinition')
   nmap('gr', require('telescope.builtin').lsp_references, '[G]oto [R]eferences')
-  nmap('gI', require('telescope.builtin').lsp_implementations, '[G]oto [I]mplementation')
+  nmap('gf', require('telescope.builtin').lsp_implementations, '[G]oto [I]mplementation')
   --nmap('<leader>D', vim.lsp.buf.type_definition, 'Type [D]efinition')
   --nmap('<leader>ds', require('telescope.builtin').lsp_document_symbols, '[D]ocument [S]ymbols')
   --nmap('<leader>ws', require('telescope.builtin').lsp_dynamic_workspace_symbols, '[W]orkspace [S]ymbols')
@@ -353,7 +352,7 @@ local on_attach = function(_, bufnr)
   nmap('<C-k>', vim.lsp.buf.signature_help, 'Signature Documentation')
 
   -- Lesser used LSP functionality
-  nmap('gD', vim.lsp.buf.declaration, '[G]oto [D]eclaration')
+  -- nmap('gD', vim.lsp.buf.declaration, '[G]oto [D]eclaration')
   nmap('<leader>pa', vim.lsp.buf.add_workspace_folder, '[W]orkspace [A]dd Folder')
   nmap('<leader>pr', vim.lsp.buf.remove_workspace_folder, '[W]orkspace [R]emove Folder')
   nmap('<leader>pl', function()

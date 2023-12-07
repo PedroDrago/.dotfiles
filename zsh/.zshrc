@@ -21,6 +21,7 @@ plugins=(git asdf z zsh-autosuggestions zsh-syntax-highlighting)
 source $ZSH/oh-my-zsh.sh
 #------------------------------ALIASES|MACROS-----------------------------
 alias bat='bat --style=auto'
+alias make='make --no-print-directory'
 alias ccf='cc -Wall -Wextra -Werror'
 alias a='./a.out'
 alias find='fd'
@@ -28,7 +29,6 @@ alias grep='rg'
 alias q='exit'
 alias t='tmux'
 alias ls='exa --icons'
-alias nvim='~/.nvim/bin/nvim'
 alias monitor='xrandr --output HDMI-0 --left-of DP-0'
 alias vim='nvim'
 #------------------------KEYBINDINGS--------------------------------------
