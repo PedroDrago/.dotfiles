@@ -6,6 +6,13 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
 fi
 
 #----------------------------------FZF----------------------------------
+export FZF_ALT_C_COMMAND='fd --type d --follow --exclude .git'
+export FZF_ALT_C_OPTS="--height 85% --preview 'bat --style=numbers --color=always {}'"
+export FZF_DEFAULT_COMMAND='fd --type f --type d --follow --exclude .git'
+export FZF_DEFAULT_OPTS="--height 85% --preview 'bat --style=numbers --color=always {}'"
+# Bind ALT-C to the custom function
+bindkey -s '^F' 'vim $(fzf)'"^M"
+bindkey '\ec' fzf-alt-c
 #----------------------------------PATHS----------------------------------
 path+=~/.local/bin
 path+='/home/drago/.asdf/installs/rust/1.73.0/bin/'
@@ -16,7 +23,7 @@ export USER="pdrago"
 #-----------------------------------ZSH-----------------------------------
 ZSH_THEME="powerlevel10k/powerlevel10k"
 
-plugins=(git asdf z zsh-autosuggestions zsh-syntax-highlighting)
+plugins=(git asdf z fzf zsh-autosuggestions zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
 #------------------------------ALIASES|MACROS-----------------------------
@@ -32,13 +39,6 @@ alias ls='exa --icons'
 alias monitor='xrandr --output HDMI-0 --left-of DP-0'
 alias vim='nvim'
 #------------------------KEYBINDINGS--------------------------------------
-# bindkey -s '^F' 'tmux-windownizer\n'
-# bindkey -s '^@' '^B'
-# bindkey -s '^@' 'tmux select-window -t 2\n'
-# bindkey -s '^[' 'tmux select-window -t 3\n'
-# bindkey -s '^\' 'tmux select-window -t 4\n'
-# bindkey -s '^]' 'tmux select-window -t 5\n'
-# bindkey -s '^^' 'tmux select-window -t 6\n'
 #-------------------------------------------------------------------------
 
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
