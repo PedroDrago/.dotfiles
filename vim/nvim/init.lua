@@ -2,8 +2,8 @@
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 vim.loader.enable()
-require("set")
 require("remap")
+require("set")
 -- Install package manage
 local lazypath = vim.fn.stdpath 'data' .. '/lazy/lazy.nvim'
 if not vim.loop.fs_stat(lazypath) then
@@ -24,7 +24,28 @@ require('lazy').setup({
   'tpope/vim-rhubarb', --:GBrowse: opens current repository and current file in github/gitlab in browser
   --icons
   'nvim-tree/nvim-web-devicons',
-  {'folke/which-key.nvim', opts = {} },
+    {
+    "folke/which-key.nvim",
+    event = "VeryLazy",
+    init = function()
+      vim.o.timeout = true
+      vim.o.timeoutlen = 500
+    end,
+    opts = {
+
+    }
+  },
+  'tpope/vim-surround',
+  -- {
+  --   "kylechui/nvim-surround",
+  --   version = "*", -- Use for stability; omit to use `main` branch for the latest features
+  --   event = "VeryLazy",
+  --   config = function()
+  --       require("nvim-surround").setup({
+  --           -- Configuration here, or leave empty to use defaults
+  --       })
+  --   end
+  -- },
 
   -- Detect tabstop and shiftwidth automatically
   'tpope/vim-sleuth',
@@ -45,6 +66,10 @@ require('lazy').setup({
 
   -- Save cursor position
   'farmergreg/vim-lastplace',
+
+  -- Jumping plugins
+  'tpope/vim-repeat',
+  'ggandor/leap.nvim',
 
   -- Toggle Terminal PLugin
   {'akinsho/toggleterm.nvim', version = "*", opts = {--[[ things you want to change go here]]}},
@@ -122,6 +147,7 @@ require('lazy').setup({
   {
     -- Theme inspired by Atom
     'navarasu/onedark.nvim',
+    lazy = false,
     priority = 1000,
     config = function()
       vim.cmd.colorscheme 'onedark'
@@ -173,7 +199,6 @@ require('lazy').setup({
 
 }, {})
 
-
 --ALPHA
 local dashboard = require("alpha.themes.dashboard")
 
@@ -200,11 +225,29 @@ dashboard.section.buttons.val = {
 
 dashboard.section.header.opts.hl = "Function"
 
+
+-- leap.nvim
+require('leap').add_default_mappings()
+
+
 -- Disable folding on alpha buffer
 vim.cmd([[
     autocmd FileType alpha setlocal nofoldenable
 ]])
 
+local cmp = require('cmp')
+cmp.setup({
+  window = {
+    completion = cmp.config.window.bordered(),
+    documentation = cmp.config.window.bordered(),
+  },
+  mapping = cmp.mapping.preset.insert({
+    -- [''] = cmp.mapping.scroll_docs(-4),
+    -- [''] = cmp.mapping.scroll_docs(4),
+    -- [''] = cmp.mapping.complete(4),
+    ['<C-q>'] = cmp.mapping.abort(),
+  })
+})
 
 -- [[ Highlight on yank ]]
 local highlight_group = vim.api.nvim_create_augroup('YankHighlight', { clear = true })

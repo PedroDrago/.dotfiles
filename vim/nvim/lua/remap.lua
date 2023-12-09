@@ -29,14 +29,11 @@ vim.keymap.set({ 'n', 'v' }, '<Space>', '<Nop>', { silent = true })
 -- Remap for dealing with word wrap
 vim.keymap.set('n', 'k', "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
 vim.keymap.set('n', 'j', "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
-
 -- Terminal
 vim.keymap.set("n", "<leader>t", ":ToggleTerm dir=pwd direction=float <CR>", { desc = 'Open Floating Terminal' })
 vim.keymap.set("n", "<leader>v", ":ToggleTerm size=100 dir=pwd direction=vertical <CR>", { desc = 'Open vertical Terminal' })
 -- Exit terminal Mode
 vim.keymap.set('t', '<esc>', [[<C-\><C-n>]])
-
-
 vim.keymap.set('n', "<leader>c", ":lua vim.lsp.buf.code_action()<CR>", { desc = 'Code Action' })
 
 -- nvimtree
@@ -49,3 +46,7 @@ vim.keymap.set('n', "<leader>a", ":vsplit <CR>", { desc = 'Split' })
 vim.keymap.set('n', "<leader>q", ":wincmd c<CR>", { desc = 'Close Buffer' })
 vim.keymap.set('n', "<leader>=", ":wincmd +<CR>")
 vim.keymap.set('n', "<leader>-", ":wincmd -<CR>")
+
+--vim surround keymaps
+vim.api.nvim_set_keymap('n', '(', [[:execute "normal \<Plug>Ysurroundiw)"<CR>]], { noremap = true, silent = true , desc = 'Surround current word with ()'})
+vim.api.nvim_set_keymap('n', '{', [[:execute "normal \<Plug>Ysurroundiw}"<CR>]], { noremap = true, silent = true , desc = 'Surround current word with {}'})
