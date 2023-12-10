@@ -1,4 +1,4 @@
-cat ascii.txt
+cat ascii.txt | lolcat
 choice=-1
 
 echo Choose dotfiles to be installed:

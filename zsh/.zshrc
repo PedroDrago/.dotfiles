@@ -4,15 +4,12 @@
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
-
 #----------------------------------FZF----------------------------------
 export FZF_ALT_C_COMMAND='fd --type d --follow --exclude .git'
 export FZF_ALT_C_OPTS="--height 85% --preview 'bat --style=numbers --color=always {}'"
 export FZF_DEFAULT_COMMAND='fd --type f --type d --follow --exclude .git'
 export FZF_DEFAULT_OPTS="--height 85% --preview 'bat --style=numbers --color=always {}'"
-# Bind ALT-C to the custom function
 bindkey -s '^F' 'vim $(fzf)'"^M"
-bindkey '\ec' fzf-alt-c
 #----------------------------------PATHS----------------------------------
 path+=~/.local/bin
 path+='/home/drago/.asdf/installs/rust/1.73.0/bin/'
@@ -26,21 +23,17 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 plugins=(git asdf z fzf zsh-autosuggestions zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
-#------------------------------ALIASES|MACROS-----------------------------
+#------------------------------ALIASES------------------------------------
 alias bat='bat --style=auto'
 alias make='make --no-print-directory'
 alias ccf='cc -Wall -Wextra -Werror'
-alias a='./a.out'
 alias find='fd'
 alias grep='rg'
 alias q='exit'
-alias t='tmux'
 alias ls='exa --icons'
 alias monitor='xrandr --output HDMI-0 --left-of DP-0'
 alias vim='nvim'
 alias update_repos='./.update_repos'
-#------------------------KEYBINDINGS--------------------------------------
-#-------------------------------------------------------------------------
 
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
