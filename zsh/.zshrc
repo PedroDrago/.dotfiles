@@ -38,6 +38,7 @@ alias t='tmux'
 alias ls='exa --icons'
 alias monitor='xrandr --output HDMI-0 --left-of DP-0'
 alias vim='nvim'
+alias update_repos='./.update_repos'
 #------------------------KEYBINDINGS--------------------------------------
 #-------------------------------------------------------------------------
 
