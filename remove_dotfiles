@@ -23,9 +23,18 @@ while true; do
     fi
 done
 
-
-cd $DIR && stow -D --target=$HOME alacritty
-cd $DIR && stow -D --target=$HOME git
-cd $DIR && stow -D --target=$HOME i3wm
-cd $DIR && stow -D --target=$HOME vim
-cd $DIR && stow -D --target=$HOME zsh
+if [ "$choice" -eq 1 ]; then
+    cd $DIR && stow -D --target=$HOME alacritty
+    cd $DIR && stow -D --target=$HOME git
+    cd $DIR && stow -D --target=$HOME i3wm
+    cd $DIR && stow -D --target=$HOME vim
+    cd $DIR && stow -D --target=$HOME zsh
+elif [ "$choice" -eq 2 ]; then
+    cd $DIR && stow -D --target=$HOME urxvt
+    cd $DIR && stow -D --target=$HOME git
+    cd $DIR && stow -D --target=$HOME i3wm
+    cd $DIR && stow -D --target=$HOME vim
+    cd $DIR && stow -D --target=$HOME zsh
+elif [ "$choice" -eq 3 ]; then
+    rm -rf $HOME/.zshrc
+    rm -rf $HOME/.config/nvim
