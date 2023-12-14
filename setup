@@ -27,8 +27,12 @@ while true; do
         echo "done"
         break
     elif [ "$choice" -eq 4 ]; then
-        bash ./remove_dotfiles
+        break
     else
         echo "Invalid input"
     fi
 done
+
+if [ "$choice" -eq 4 ]; then
+        bash ./remove_dotfiles
+fi
