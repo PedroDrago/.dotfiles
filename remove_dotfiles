@@ -1,0 +1,32 @@
+#! /bin/bsh
+
+cat ascii.txt | lolcat
+choice=-1
+
+echo Choose dotfiles to be removed:
+echo [1] Desktop
+echo [2] Laptop
+echo [3] 42
+
+while true; do
+    read choice
+    if [ "$choice" -eq 1 ]; then
+        DIR="$(pwd)/desktop"
+        break
+    elif [ "$choice" -eq 2 ]; then
+        DIR=./laptop
+        break
+    elif [ "$choice" -eq 3 ]; then
+        DIR=./42
+        break
+    else
+        echo "Invalid input"
+    fi
+done
+
+
+cd $DIR && stow -D --target=$HOME alacritty
+cd $DIR && stow -D --target=$HOME git
+cd $DIR && stow -D --target=$HOME i3wm
+cd $DIR && stow -D --target=$HOME vim
+cd $DIR && stow -D --target=$HOME zsh

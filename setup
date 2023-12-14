@@ -1,0 +1,34 @@
+#! /bin/sh
+
+cat ascii.txt | lolcat
+choice=-1
+
+echo Choose dotfiles to be installed:
+echo [1] Desktop
+echo [2] Laptop
+echo [3] 42
+echo [4] Uninstall dotfiles
+
+while true; do
+    read choice
+    if [ "$choice" -eq 1 ]; then
+        echo "Installing Desktop dotfiles"
+	cd "$(pwd)/desktop" && bash stow_script.sh
+        echo "done"
+        break
+    elif [ "$choice" -eq 2 ]; then
+        echo "Installing Laptop dotfiles"
+	cd "$(pwd)/laptop" && bash stow_script.sh
+        echo "done"
+        break
+    elif [ "$choice" -eq 3 ]; then
+        echo "Installing 42 dotfiles"
+	cd "$(pwd)/42" && bash stow_script.sh
+        echo "done"
+        break
+    elif [ "$choice" -eq 4 ]; then
+        bash ./remove_dotfiles
+    else
+        echo "Invalid input"
+    fi
+done
