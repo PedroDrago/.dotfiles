@@ -24,6 +24,9 @@ require('lazy').setup({
   'tpope/vim-rhubarb', --:GBrowse: opens current repository and current file in github/gitlab in browser
   --icons
   'nvim-tree/nvim-web-devicons',
+  'rstacruz/vim-closer',
+  {'mfussenegger/nvim-dap',
+  dependencies = {'rcarriga/nvim-dap-ui', 'nvim-telescope/telescope-dap.nvim', 'theHamsta/nvim-dap-virtual-text'}},
   {
     "folke/which-key.nvim",
     event = "VeryLazy",
@@ -224,8 +227,10 @@ require('lazy').setup({
 ----------------------------------------------------------------------------------------------------------------------------------------------------------
 ----------------------------------------------------------------------------------------------------------------------------------------------------------
 
-
 require("noice").setup({
+  messages ={
+    enabled = false,
+  },
   lsp = {
     -- override markdown rendering so that **cmp** and other plugins use **Treesitter**
     override = {
