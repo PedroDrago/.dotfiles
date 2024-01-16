@@ -25,8 +25,6 @@ require('lazy').setup({
   --icons
   'nvim-tree/nvim-web-devicons',
   'rstacruz/vim-closer',
-  {'mfussenegger/nvim-dap',
-  dependencies = {'rcarriga/nvim-dap-ui', 'nvim-telescope/telescope-dap.nvim', 'theHamsta/nvim-dap-virtual-text'}},
   {
     "folke/which-key.nvim",
     event = "VeryLazy",
