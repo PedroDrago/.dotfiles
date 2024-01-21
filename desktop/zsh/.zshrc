@@ -34,7 +34,6 @@ alias q='exit'
 alias ls='exa --icons'
 alias monitor='xrandr --output HDMI-0 --left-of DP-0'
 alias vim='nvim'
-alias update_repos='ur'
 alias grademe='bash -c "$(curl https://grademe.fr)"'
 alias pclone='f(){ git clone git@github.com:PedroDrago/"$1" && cd "$1"; }; f'
 

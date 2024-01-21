@@ -5,9 +5,6 @@ GREEN='\033[0;32m'
 MAGENTA='\033[0;35m'
 ENDCOLOR='\033[0m'
 
-echo "$GREEN""Updating nvim standalone repo$ENDCOLOR"
-cd $HOME/repos/nvim && git add . && git commit -m "autoupdate" && git push
-echo "$GREEN""--------------------------------$ENDCOLOR"
 echo "$GREEN""Updating .dotfiles repo$ENDCOLOR"
 cd $HOME/.dotfiles && git add . && git commit -m "autoupdate" && git push
 echo "$GREEN""--------------------------------$ENDCOLOR"
