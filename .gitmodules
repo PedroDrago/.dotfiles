@@ -1,0 +1,3 @@
+[submodule "desktop/vim/nvim"]
+	path = desktop/vim/nvim
+	url = git@github.com:PedroDrago/nvim.git
