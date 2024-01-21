@@ -6,5 +6,6 @@ MAGENTA='\033[0;35m'
 ENDCOLOR='\033[0m'
 
 echo "$GREEN""Updating .dotfiles repo$ENDCOLOR"
-cd $HOME/.dotfiles && git add . && git commit -m "autoupdate" && git push
+cd $HOME/.dotfiles && git pull
+git add . && git commit -m "autoupdate" && git push
 echo "$GREEN""--------------------------------$ENDCOLOR"
