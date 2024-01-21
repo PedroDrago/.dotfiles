@@ -12,7 +12,7 @@ export FZF_DEFAULT_OPTS="--height 85% --preview 'bat --style=numbers --color=alw
 bindkey -s '^F' 'vim $(fzf)'"^M"
 #----------------------------------PATHS----------------------------------
 path+=~/.local/bin
-path+='/home/drago/.asdf/installs/rust/1.73.0/bin/'
+path+='/home/drago/.asdf/installs/rust/1.75.0/bin/'
 path+="/usr/local/go/bin"
 
 export ZSH="$HOME/.oh-my-zsh"
