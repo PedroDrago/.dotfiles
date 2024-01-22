@@ -20,15 +20,5 @@ stow --adopt --target=$HOME -v zsh
 stow --adopt --target=$HOME -v git
 #stow -D dir (ex: stow -D git) //to unstow
 
-
-
-
 #for each directory which have to stay in .config
 stow --adopt --target=$HOME/.config -v vim
-
-#stow -D --target=symlink_path dir_path
-#stow -D --target=$HOME/.config/i3 i3wm
-
-
-#STOW REFACTOR: .dotfiles located in .config, and stow once files that need to stay in .config, and stow twice files that need to stay in $HOME.
-#STOW REFACTOR: make array with files and iterate array doing rm -rf in each item.

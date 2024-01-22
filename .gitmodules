@@ -1,3 +1,6 @@
 [submodule "desktop/vim/nvim"]
 	path = desktop/vim/nvim
 	url = git@github.com:PedroDrago/nvim.git
+[submodule "42/vim/nvim"]
+	path = 42/vim/nvim
+	url = git@github.com:PedroDrago/nvim.git
