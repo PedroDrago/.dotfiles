@@ -10,6 +10,7 @@ export FZF_ALT_C_OPTS="--height 85% --preview 'bat --style=numbers --color=alway
 export FZF_DEFAULT_COMMAND='fd --type f --type d --follow --exclude .git'
 export FZF_DEFAULT_OPTS="--height 85% --preview 'bat --style=numbers --color=always {}'"
 bindkey -s '^F' 'vim $(fzf)'"^M"
+bindkey -s '^Q' 'cd $(fzf)'"^M"
 #----------------------------------PATHS----------------------------------
 path+=~/.local/bin
 path+='/home/drago/.asdf/installs/rust/1.75.0/bin/'
