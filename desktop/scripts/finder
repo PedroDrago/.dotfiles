@@ -1,10 +1,17 @@
 #! /bin/sh
 
-dest=$(fd . ~ --type f --type d --follow --exclude .git --min-depth 1 | fzf)
 
-if [ -z $dest ]; then
-	exit 0
+
+if [[ $# -eq 1 ]]; then
+	dest=$1
+else
+	dest=$(fd . ~ --type f --type d --follow --exclude .git --min-depth 1 | fzf)
 fi
+
+if [[ -z $dest ]]; then
+	return ;
+fi
+
 
 if [ -d $dest ]; then
 	cd $dest
