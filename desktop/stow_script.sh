@@ -29,8 +29,6 @@ stow --adopt --target=$HOME -v git
 #stow -D dir (ex: stow -D git) //to unstow
 
 
-
-
 #for each directory which have to stay in .config
 stow --adopt --target=$HOME/.config -v i3wm
 stow --adopt --target=$HOME/.config -v alacritty
