@@ -22,6 +22,7 @@ fi
 if test -d "$HOME/.config/alacritty";then
   rm -rf $HOME/.config/alacritty
 fi
+
 #for each file that need to stay in home
 stow --adopt --target=$HOME -v zsh
 stow --adopt --target=$HOME -v git
@@ -33,10 +34,8 @@ stow --adopt --target=$HOME -v git
 stow --adopt --target=$HOME/.config -v i3wm
 stow --adopt --target=$HOME/.config -v alacritty
 stow --adopt --target=$HOME/.config -v vim
-
 #stow -D --target=symlink_path dir_path
-#stow -D --target=$HOME/.config/i3 i3wm                                          ✔
+#stow -D --target=$HOME/.config/i3 i3wm 
 
-
-#STOW REFACTOR: .dotfiles located in .config, and stow once files that need to stay in .config, and stow twice files that need to stay in $HOME.
-#STOW REFACTOR: make array with files and iterate array doing rm -rf in each item.
+#install scripts in system
+./scripts/install_scripts.sh
