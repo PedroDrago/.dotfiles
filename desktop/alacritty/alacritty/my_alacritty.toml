@@ -1,0 +1,21 @@
+[colors.normal]
+black = "#1d1f21"
+blue = "#81a2be"
+cyan = "#70c0b1"
+green = "#a6c54f"
+magenta = "#b294bb"
+red = "#cc6666"
+white = "#c5c8c6"
+yellow = "#ea9b52"
+
+[colors.primary]
+# background = "#0d1117"
+
+[env]
+TERM = "xterm-256color"
+
+[font]
+size = 12.0
+
+[font.normal]
+family = "MesloLGS NF"

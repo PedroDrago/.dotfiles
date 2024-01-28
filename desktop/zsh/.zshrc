@@ -13,13 +13,14 @@ path+=~/.local/bin
 path+='/home/drago/.asdf/installs/rust/1.75.0/bin/'
 path+="/usr/local/go/bin"
 
-export ZSH="$HOME/.oh-my-zsh"
+#-----------------------------------42------------------------------------------
 export MAIL="pdrago@student.42.rio"
 export USER="pdrago"
-#-----------------------------------ZSH-----------------------------------
+#-----------------------------------OH-MY-ZSH-----------------------------------
+export ZSH="$HOME/.oh-my-zsh"
 ZSH_THEME="powerlevel10k/powerlevel10k"
 
-plugins=(git asdf z fzf zsh-autosuggestions zsh-syntax-highlighting)
+plugins=(git asdf fzf zsh-autosuggestions zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
 #------------------------------ALIASES------------------------------------
@@ -37,6 +38,7 @@ alias vim='nvim'
 alias grademe='bash -c "$(curl https://grademe.fr)"'
 alias pclone='f(){ git clone git@github.com:PedroDrago/"$1" && cd "$1"; }; f'
 
+#---------------------------------------------------------------------------
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

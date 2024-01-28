@@ -2,8 +2,16 @@
 
 - populate laptop and 42 directories
     - Make stowing script for each one
-- configure tmux or zelliJ
-    - If terminal multiplexer work feels nice, change so that fzf works in a different way: It will still remain the behavior for directories and files, but now it will always create a new window/tab/tile/workspace (whatever it is called) in the multiplexer, with the directory/file name, but only if that window/tab/tile/workspace does not exist, if it exists, it will only change to that window/tab/tile/workspace.
+- Try out ZelliJ
+- Use the `finder` script i've made to achieve the following result:
+    - When selecting something with `finder` it will check if there is already a window/tab whatever it is called in that place (dir/file). If it already exists, then just hop to that window/tab. If it does not exist, then creates a new window/tab opening that place (cd if a directory, vim if a file).
+    - Rice it to have good visuals, that match both onedark and my alacritty appearence. The visuals must be minimal, the zelliJ bar must not cluster with nvim lualine.
+- Find a good status bar. Polybar is the most famous but I've herad it consumes too much memory for just a bar, and other famous options are wayland exclusive. [xmobar](https://codeberg.org/xmobar/xmobar) may be a good choice though. Other option is [eww](https://github.com/elkowar/eww), it has a more modern feeling.
+
+This bar must show:
+- Workspaces
+    
+    
 
 ### Kickstart
 ```bash
