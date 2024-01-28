@@ -1,0 +1,15 @@
+#! /bin/sh
+
+dest=$(fd . ~ --type f --type d --follow --exclude .git --min-depth 1 | fzf)
+
+if [ -z $dest ]; then
+	exit 0
+fi
+
+if [ -d $dest ]; then
+	cd $dest
+else
+	file=$(basename "$dest")
+	dir=$(dirname "$dest")
+	cd $dir && nvim $file
+fi

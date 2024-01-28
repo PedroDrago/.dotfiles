@@ -5,12 +5,9 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 #----------------------------------FZF----------------------------------
-export FZF_ALT_C_COMMAND='fd --type d --follow --exclude .git'
-export FZF_ALT_C_OPTS="--height 85% --preview 'bat --style=numbers --color=always {}'"
 export FZF_DEFAULT_COMMAND='fd --type f --type d --follow --exclude .git'
 export FZF_DEFAULT_OPTS="--height 85% --preview 'bat --style=numbers --color=always {}'"
-bindkey -s '^F' 'vim $(fzf)'"^M"
-bindkey -s '^S' 'cd $(fzf)'"^M"
+bindkey -s '^F' '. finder'"^M"
 #----------------------------------PATHS----------------------------------
 path+=~/.local/bin
 path+='/home/drago/.asdf/installs/rust/1.75.0/bin/'
