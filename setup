@@ -6,7 +6,6 @@ choice=-1
 echo Choose dotfiles to be installed:
 echo [1] Desktop
 echo [2] Laptop
-echo [3] 42
 echo [4] Uninstall dotfiles
 
 while true; do
@@ -21,18 +20,10 @@ while true; do
 	cd "$(pwd)/laptop" && bash stow_script.sh
         echo "done"
         break
-    elif [ "$choice" -eq 3 ]; then
-        echo "Installing 42 dotfiles"
-	cd "$(pwd)/42" && bash stow_script.sh
-        echo "done"
-        break
     elif [ "$choice" -eq 4 ]; then
+        bash ./remove_dotfiles
         break
     else
         echo "Invalid input"
     fi
 done
-
-if [ "$choice" -eq 4 ]; then
-        bash ./remove_dotfiles
-fi

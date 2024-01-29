@@ -5,7 +5,6 @@ choice=-1
 echo Choose dotfiles to be removed:
 echo [1] Desktop
 echo [2] Laptop
-echo [3] 42
 
 while true; do
     read choice
@@ -15,9 +14,6 @@ while true; do
     elif [ "$choice" -eq 2 ]; then
         DIR="$(pwd)/laptop"
         break
-    elif [ "$choice" -eq 3 ]; then
-        DIR="$(pwd)/42"
-        break
     else
         echo "Invalid input"
     fi
@@ -25,16 +21,11 @@ done
 
 if [ "$choice" -eq 1 ]; then
     cd $DIR && stow -D --target=$HOME alacritty
-    cd $DIR && stow -D --target=$HOME git
-    cd $DIR && stow -D --target=$HOME i3wm
-    cd $DIR && stow -D --target=$HOME vim
-    cd $DIR && stow -D --target=$HOME zsh
 elif [ "$choice" -eq 2 ]; then
     cd $DIR && stow -D --target=$HOME urxvt
-    cd $DIR && stow -D --target=$HOME git
-    cd $DIR && stow -D --target=$HOME i3wm
-    cd $DIR && stow -D --target=$HOME vim
-    cd $DIR && stow -D --target=$HOME zsh
-elif [ "$choice" -eq 3 ]; then
-    rm -rf $HOME/.zshrc
-    rm -rf $HOME/.config/nvim
+fi
+
+cd $DIR && stow -D --target=$HOME git
+cd $DIR && stow -D --target=$HOME i3wm
+cd $DIR && stow -D --target=$HOME vim
+cd $DIR && stow -D --target=$HOME zsh
