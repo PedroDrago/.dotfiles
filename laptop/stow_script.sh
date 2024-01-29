@@ -19,14 +19,13 @@ if test -d "$HOME/.config/i3";then
   rm -rf $HOME/.config/i3
 fi
 
-if test -d "$HOME/.config/alacritty";then
-  rm -rf $HOME/.config/alacritty
+if test -f "$HOME/.Xresources";then
+  rm -rf $HOME/.Xresources
 fi
 #for each file that need to stay in home
 stow --adopt --target=$HOME -v zsh
 stow --adopt --target=$HOME -v git
 stow --adopt --target=$HOME -v urxvt
-#stow --adopt --target=$HOME -v tmux
 #stow -D dir (ex: stow -D git) //to unstow
 
 
@@ -35,10 +34,8 @@ stow --adopt --target=$HOME -v urxvt
 #for each directory which have to stay in .config
 stow --adopt --target=$HOME/.config -v i3wm
 stow --adopt --target=$HOME/.config -v vim
+#stow -D --target=$HOME/.config/i3 i3wm
 
-#stow -D --target=symlink_path dir_path
-#stow -D --target=$HOME/.config/i3 i3wm                                          ✔
-
-
-#STOW REFACTOR: .dotfiles located in .config, and stow once files that need to stay in .config, and stow twice files that need to stay in $HOME.
-#STOW REFACTOR: make array with files and iterate array doing rm -rf in each item.
+#install scripts in system
+./scripts/install_scripts.sh
+xrdb -merge ~/.Xresources

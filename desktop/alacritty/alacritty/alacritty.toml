@@ -29,7 +29,8 @@ white = "0x828791"
 yellow = "0xd19a66"
 
 [colors.primary]
-# background = "0x1e2127"
+# background = "0x1e2127" #github onedark background
+# background = "#0d1117" #github background
 bright_foreground = "0xe6efff"
 foreground = "0xabb2bf"
 

@@ -10,7 +10,7 @@ export FZF_DEFAULT_OPTS="--height 85% --preview 'bat --style=numbers --color=alw
 bindkey -s '^F' '. finder'"^M"
 #----------------------------------PATHS----------------------------------
 path+=~/.local/bin
-path+='/home/drago/.asdf/installs/rust/1.75.0/bin/'
+# path+='/home/drago/.asdf/installs/rust/1.75.0/bin/'
 path+="/usr/local/go/bin"
 
 #-----------------------------------42------------------------------------------
@@ -24,10 +24,11 @@ plugins=(git asdf fzf zsh-autosuggestions zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
 #------------------------------ALIASES------------------------------------
-alias bat='bat --style=auto'
+alias bat='batcat --style=auto'
 alias make='make --no-print-directory'
 alias ccf='cc -Wall -Wextra -Werror'
-alias find='fd'
+alias find='fdfind'
+alias fd='fdfind'
 alias grep='rg'
 alias q='exit'
 alias ls='exa --icons'

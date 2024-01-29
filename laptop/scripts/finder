@@ -1,0 +1,22 @@
+#! /bin/sh
+
+
+
+if [[ $# -eq 1 ]]; then
+	dest=$1
+else
+	dest=$(fd . ~ --type f --type d --follow --exclude .git --min-depth 1 | fzf)
+fi
+
+if [[ -z $dest ]]; then
+	return ;
+fi
+
+
+if [ -d $dest ]; then
+	cd $dest
+else
+	file=$(basename "$dest")
+	dir=$(dirname "$dest")
+	cd $dir && nvim $file
+fi
