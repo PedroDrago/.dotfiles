@@ -68,13 +68,11 @@ workspace 0 output $primary_monitor
 #-----------------------BAR-------------------------
 bar {
   
+  tray_output $primary_monitor
   #display chosen status, in this case it displays i3blocks
   status_command SCRIPT_DIR=~/.config/i3blocks/scripts i3blocks
+  # status_command i3status
   separator_symbol " "
-
-  #set tray icons on primary monitor
-  tray_output primary
-
 
   #disable mouse scrolling
   bindsym button4 nop
@@ -107,8 +105,6 @@ bindsym $mod+q kill
 
 #set autolock to 3 minutes
 exec xautolock -detectsleep -time 10 -locker "i3lock -t -i ~/.config/i3/desktop_purple_mountain.png"
-
-
 
 
 # Font for window titles. Will also be used by the bar unless a different font

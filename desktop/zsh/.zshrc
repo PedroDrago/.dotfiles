@@ -10,7 +10,7 @@ export FZF_DEFAULT_OPTS="--height 85% --preview 'bat --style=numbers --color=alw
 bindkey -s '^F' '. finder'"^M"
 #----------------------------------PATHS----------------------------------
 path+=~/.local/bin
-# path+='/home/drago/.asdf/installs/rust/1.75.0/bin/'
+path+='/home/drago/.asdf/installs/rust/1.75.0/bin/'
 path+="/usr/local/go/bin"
 
 #-----------------------------------42------------------------------------------
