@@ -68,7 +68,7 @@ workspace 0 output $primary_monitor
 #-----------------------BAR-------------------------
 bar {
   
-  tray_output $primary_monitor
+  # tray_output $primary_monitor
   #display chosen status, in this case it displays i3blocks
   status_command SCRIPT_DIR=~/.config/i3blocks/scripts i3blocks
   # status_command i3status
