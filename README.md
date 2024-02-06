@@ -24,5 +24,6 @@
     
 ### Kickstart
 ```bash
-git clone --recurse-submodules https://github.com/PedroDrago/.dotfiles.git && cd .dotfiles && ./install
+git clone --recurse-submodules git@github.com:PedroDrago/.dotfiles.git && cd .dotfiles && ./install
+
 ```
