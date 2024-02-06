@@ -24,5 +24,5 @@
     
 ### Kickstart
 ```bash
-git clone https://github.com/PedroDrago/nvim.git && cd .dotfiles && ./install
+git clone --recurse-submodules https://github.com/PedroDrago/.dotfiles.git && cd .dotfiles && ./install
 ```
