@@ -3,7 +3,6 @@
 git clone --recurse-submodules git@github.com:PedroDrago/.dotfiles.git && cd .dotfiles && ./install
 
 ```
-**OBS**: `stow` is a dependency for `install` script.
 
 ### My Tools
 - **Terminal**: [Alacritty](https://github.com/alacritty/alacritty) AND [rxvt-unicode](https://wiki.archlinux.org/title/rxvt-unicode)
