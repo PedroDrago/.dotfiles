@@ -1,0 +1,1 @@
+rm -rf ~/.Xresources ~/.zshrc ~/.p10k.zsh ~/.gitconfig ~/.config/alacritty ~/.config/i3 ~/.config/nvim
