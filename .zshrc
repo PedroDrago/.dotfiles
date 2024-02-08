@@ -10,9 +10,6 @@ export FZF_DEFAULT_OPTS="--height 85% --preview 'bat --style=numbers --color=alw
 bindkey -s '^F' '. finder'"^M"
 #----------------------------------PATHS----------------------------------
 path+=~/.local/bin
-path+='/home/drago/.asdf/installs/rust/1.75.0/bin/'
-path+="/usr/local/go/bin"
-
 #-----------------------------------42------------------------------------------
 export MAIL="pdrago@student.42.rio"
 export USER="pdrago"
@@ -39,6 +36,7 @@ alias vim='nvim'
 alias grademe='bash -c "$(curl https://grademe.fr)"'
 alias pclone='f(){ git clone git@github.com:PedroDrago/"$1" && cd "$1"; }; f'
 alias p='python'
+alias maxvol='amixer -D pulse sset Master 100%'
 
 #---------------------------------------------------------------------------
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
