@@ -17,7 +17,7 @@ export USER="pdrago"
 export ZSH="$HOME/.oh-my-zsh"
 ZSH_THEME="powerlevel10k/powerlevel10k"
 
-plugins=(git asdf fzf zsh-autosuggestions zsh-syntax-highlighting)
+plugins=(git asdf fzf colored-man-pages zsh-autosuggestions zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
 #------------------------------ALIASES------------------------------------
