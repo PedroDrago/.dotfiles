@@ -17,6 +17,7 @@ bindsym Control+shift+l exec "i3lock -t -i ~/.config/i3/desktop_purple_mountain.
 #set wallpaper
 exec_always --no-startup-id feh --bg-fill ~/.config/i3/desktop_purple_mountain.png
 #exec_always --no-startup-id polybar primary --config=~/.config/polybar/config.ini
+exec_always --no-startup-id xrandr --output HDMI-0 --left-of DP-0
 
 #-----------WORKSPACES OUTPUTS-----------------
 # create monitors variables
