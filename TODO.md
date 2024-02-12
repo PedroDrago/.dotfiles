@@ -9,8 +9,7 @@
 - Battery (only on notebook)
 ### Would be nice if it shows:
 - Network connection
-- Turn off / Reboot button
-    
+
 # Terminal Multiplexer
 - Decide whether to stick with Tmux or ZelliJ. The focus should be finding the easiest one to integrate with my workflow, and that is based on two things:
 1. The ability to jump between "terminals" with just 2 keystrokes, the same way I can do with i3, or neovim. CTRL+1, CTRL+2, CTRL+3 etc. should jump me to the right terminal.
