@@ -36,7 +36,8 @@ alias vim='nvim'
 alias grademe='bash -c "$(curl https://grademe.fr)"'
 alias pclone='f(){ git clone git@github.com:PedroDrago/"$1" && cd "$1"; }; f'
 alias p='python'
-alias maxvol='amixer -D pulse sset Master 100%'
+alias volmax='amixer -D pulse sset Master 100%'
+alias vol='f(){ amixer -D pulse sset Master "$1"%; }; f'
 
 #---------------------------------------------------------------------------
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
