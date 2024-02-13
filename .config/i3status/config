@@ -11,18 +11,19 @@ general {
         interval = 5
 }
 
-#order += "ipv6"
 #order += "wireless _first_"
 order += "ethernet _first_"
+order += "volume master"
 #order += "battery all"
-#order += "disk /"
-#order += "load"
 #order += "memory"
 order += "tztime local"
 
+volume master {
+        format = "%volume"
+}
 wireless _first_ {
-        format_up = "W: (%quality at %essid) %ip"
-        format_down = "W: down"
+        format_up = "W:On"
+        format_down = "W:Off"
 }
 
 ethernet _first_ {
@@ -31,21 +32,9 @@ ethernet _first_ {
 }
 
 battery all {
-        format = "%status %percentage %remaining"
-}
-
-disk "/" {
-        format = "%avail"
-}
-
-load {
-        format = "%1min"
-}
-
-memory {
-        format = "%used"
+        format = "%status %percentage"
 }
 
 tztime local {
-        format = "%d/%m/%Y %H:%M"
+        format = "%d/%m/%Y %H:%M "
 }

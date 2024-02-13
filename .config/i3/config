@@ -68,15 +68,13 @@ workspace 0 output $primary_monitor
 
 #-----------------------BAR-------------------------
 bar {
-  
   status_command i3status
   position top
+  tray_output none
   separator_symbol "|"
   colors {
     background #171C18
-    statusline #FFFFFF
   }
-
   #disable mouse scrolling
   bindsym button4 nop
   bindsym button5 nop
