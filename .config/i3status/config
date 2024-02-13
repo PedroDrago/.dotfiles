@@ -9,6 +9,9 @@
 general {
         colors = true
         interval = 5
+        color_bad = '#E06C75'
+        color_good = '#98C379'
+        color_degraded = '#D19A66'
 }
 
 #order += "wireless _first_"
