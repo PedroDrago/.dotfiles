@@ -13,6 +13,7 @@ path+=~/.local/bin
 #-----------------------------------42------------------------------------------
 export MAIL="pdrago@student.42.rio"
 export USER="pdrago"
+export PATH="/usr/lib/git-fuzzy/bin:$PATH"
 #-----------------------------------OH-MY-ZSH-----------------------------------
 export ZSH="$HOME/.oh-my-zsh"
 ZSH_THEME="powerlevel10k/powerlevel10k"

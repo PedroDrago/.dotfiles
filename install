@@ -3,4 +3,4 @@
 ./uninstall
 stow --adopt .
 xrdb ~/.Xresources
-cd .dotfiles/.config/nvim && git checkout main
+cd ~/.dotfiles/.config/nvim && git checkout main

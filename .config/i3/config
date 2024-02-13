@@ -69,11 +69,13 @@ workspace 0 output $primary_monitor
 #-----------------------BAR-------------------------
 bar {
   
-  # tray_output $primary_monitor
-  #display chosen status, in this case it displays i3blocks
-  # status_command SCRIPT_DIR=~/.config/i3blocks/scripts i3blocks
   status_command i3status
-  separator_symbol " "
+  position top
+  separator_symbol "|"
+  colors {
+    background #171C18
+    statusline #FFFFFF
+  }
 
   #disable mouse scrolling
   bindsym button4 nop
@@ -82,8 +84,10 @@ bar {
 #-----------------------TILES-------------------------------
 #change border size and remove title
 for_window [class="^.*"] border pixel 2
+
 #last two hex change border color
-client.focused #555555 #555555 #9FDDFF #4BBEFF #4BBEFF
+client.focused #222222 #222222 #9FDDFF #4BBEFF #4BBEFF
+# client.unfocused #555555 #555555 #9FDDFF #FFFFFF #FFFFFF
 #-----------------------------------------------------------
 
 #disable mouse auto focus and auto warp
