@@ -74,7 +74,9 @@ bar {
   separator_symbol "|"
   colors {
     background #171C18
+    statusline #E6EFFF
   }
+  # font pango:MesloLGS NF 11
   #disable mouse scrolling
   bindsym button4 nop
   bindsym button5 nop
@@ -113,7 +115,9 @@ exec xautolock -detectsleep -time 10 -locker "i3lock -t -i ~/.config/i3/desktop_
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
-font pango:monospace 10
+# font pango:monospace 50
+font pango:MesloLGS NF 10
+# font MesloLGS NF Regular 50
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
