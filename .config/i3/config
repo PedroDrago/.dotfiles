@@ -86,7 +86,7 @@ bar {
 for_window [class="^.*"] border pixel 2
 
 #last two hex change border color
-client.focused #222222 #222222 #9FDDFF #4BBEFF #4BBEFF
+client.focused #222222 #222222 #9FDDFF #61AFEF #61AFEF
 # client.unfocused #555555 #555555 #9FDDFF #FFFFFF #FFFFFF
 #-----------------------------------------------------------
 
