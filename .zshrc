@@ -18,20 +18,21 @@ export PATH="/usr/lib/git-fuzzy/bin:$PATH"
 export ZSH="$HOME/.oh-my-zsh"
 ZSH_THEME="powerlevel10k/powerlevel10k"
 
-plugins=(git asdf fzf colored-man-pages zsh-autosuggestions zsh-syntax-highlighting)
+plugins=(git asdf vi-mode fzf colored-man-pages zsh-autosuggestions zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
 #------------------------------ALIASES------------------------------------
-alias bat='batcat --style=auto'
-alias make='make --no-print-directory'
-alias ccf='cc -Wall -Wextra -Werror'
 alias find='fdfind'
 alias fd='fdfind'
 alias grep='rg'
-alias q='exit'
-alias ls='exa --icons'
-alias t='tmux'
 alias vim='nvim'
+alias ls='exa --icons'
+
+alias bat='batcat --style=auto'
+alias make='make --no-print-directory'
+alias ccf='cc -Wall -Wextra -Werror'
+alias q='exit'
+alias t='tmux'
 alias grademe='bash -c "$(curl https://grademe.fr)"'
 alias pclone='f(){ git clone git@github.com:PedroDrago/"$1" && cd "$1"; }; f'
 alias p='python'

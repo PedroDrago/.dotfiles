@@ -7,3 +7,5 @@
 	ui = auto
 [core]
 	editor = nvim
+[safe]
+	directory = /mnt/share/vault
