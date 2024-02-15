@@ -6,6 +6,6 @@
 [color]
 	ui = auto
 [core]
-	editor = nvim
+	editor = vim
 [safe]
 	directory = /mnt/share/vault
