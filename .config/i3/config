@@ -6,7 +6,6 @@ exec --no-startup-id setxkbmap -option compose:ralt
 #-----------I3STARTUP-CONFIGS--------------------
 exec_always --no-startup-id xrandr --output HDMI-0 --left-of DP-0
 exec_always --no-startup-id feh --bg-fill ~/.config/i3/wallpaper.png
-
 exec xautolock -detectsleep -time 10 -locker "i3lock -t -i ~/.config/i3/wallpaper.png"
 
 #-----------Applications--------------------
@@ -127,8 +126,6 @@ bar {
 #-----------------------TILES-------------------------------
 #change border size and remove title
 for_window [class="^.*"] border pixel 2
-
-#last two hex change border color
 client.focused #222222 #222222 #9FDDFF #61AFEF #61AFEF
 
 # Use Mouse+$mod to drag floating windows to their wanted position
@@ -145,20 +142,20 @@ bindsym $mod+Shift+k move up
 bindsym $mod+Shift+l move right
 
 bindsym $mod+f fullscreen toggle
+bindsym $mod+q kill
 
-bindsym $mod+s layout stacking
-bindsym $mod+w layout tabbed
-bindsym $mod+e layout toggle split
+# bindsym $mod+s layout stacking
+# bindsym $mod+w layout tabbed
+# bindsym $mod+e layout toggle split
 
 bindsym $mod+space floating toggle
 
-bindsym $mod+r mode "resize"
 bindsym $mod+Shift+r restart
 bindsym $mod+Shift+c reload
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'Do you really want to exit i3?' -B 'Yes' 'i3-msg exit'"
 
-bindsym $mod+q kill
 
+bindsym $mod+r mode "resize"
 mode "resize" {
 	# horizontal resizing
         bindsym h resize shrink width 10 px or 10 ppt
