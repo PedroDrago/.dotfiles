@@ -5,3 +5,4 @@
 
 # dmenu alternative
 - The only one that i've find is [Rofi](https://github.com/davatorium/rofi), but it's very bloated and weird to configure. The goal is to be able to configure rofi powermenu to a minimal dmenu like configuration (with the recommended themes), and to eliminate all bloat that exists in the rofi package.
+- Another one that i've found is [Onagre](https://github.com/onagre-launcher/onagre), which looks cool, and is only a dmenu alternative, and seemes easier to configure and install.
