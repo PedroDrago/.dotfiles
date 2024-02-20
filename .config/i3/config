@@ -6,6 +6,8 @@ exec --no-startup-id setxkbmap -option compose:ralt
 #-----------I3STARTUP-CONFIGS--------------------
 exec_always --no-startup-id xrandr --output HDMI-0 --left-of DP-0
 exec_always --no-startup-id feh --bg-fill ~/.config/i3/wallpaper.png
+# disable capslock
+exec_always --no-startup-id setxkbmap -option ctrl:nocaps
 exec xautolock -detectsleep -time 10 -locker "i3lock -t -i ~/.config/i3/wallpaper.png"
 
 #-----------Applications--------------------

@@ -27,7 +27,6 @@ alias fd='fdfind'
 alias grep='rg'
 alias vim='nvim'
 alias ls='exa --icons'
-
 alias bat='batcat --style=auto'
 alias make='make --no-print-directory'
 alias ccf='cc -Wall -Wextra -Werror'
