@@ -129,6 +129,11 @@ bar {
 #change border size and remove title
 for_window [class="^.*"] border pixel 2
 client.focused #222222 #222222 #9FDDFF #61AFEF #61AFEF
+# set $h_gaps 10
+# set $v_gaps 10
+#
+# # Gaps
+# gaps inner $h_gaps $v_gaps
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
