@@ -1,3 +1,4 @@
+############################ MIXED ONEDARK AND MINE COLORS:
 [colors.bright]
 black = "0x5c6370"
 blue = "0x61afef"
@@ -29,10 +30,108 @@ white = "0x828791"
 yellow = "0xd19a66"
 
 [colors.primary]
-# background = "0x1e2127" #github onedark background
-# background = "#0d1117" #github background
 bright_foreground = "0xe6efff"
 foreground = "0xabb2bf"
+
+############################ MY OLD COLORS:
+# [colors.normal]
+# black = "#1d1f21"
+# blue = "#81a2be"
+# cyan = "#70c0b1"
+# green = "#a6c54f"
+# magenta = "#b294bb"
+# red = "#cc6666"
+# white = "#c5c8c6"
+# yellow = "#ea9b52"
+#
+# [colors.primary]
+# # background = "#0d1117"
+
+
+############################ TOKYO NIGHT NIGHT:
+# [colors.primary]
+# background = '#1a1b26'
+# foreground = '#c0caf5'
+#
+#[colors.cursor]
+#cursor = '#c0caf5'
+#text = '#1a1b26'
+#
+# # Normal colors
+# [colors.normal]
+# black = '#15161e'
+# red = '#f7768e'
+# green = '#9ece6a'
+# yellow = '#e0af68'
+# blue = '#7aa2f7'
+# magenta = '#bb9af7'
+# cyan = '#7dcfff'
+# white = '#a9b1d6'
+#
+# # Bright colors
+# [colors.bright]
+# black = '#414868'
+# red = '#f7768e'
+# green = '#9ece6a'
+# yellow = '#e0af68'
+# blue = '#7aa2f7'
+# magenta = '#bb9af7'
+# cyan = '#7dcfff'
+# white = '#c0caf5'
+#
+# # Indexed Colors
+# [[colors.indexed_colors]]
+# index = 16
+# color = '#ff9e64'
+#
+# [[colors.indexed_colors]]
+# index = 17
+# color = '#db4b4b'
+
+############################ TOKYO NIGHT STORM:
+# [colors.primary]
+# background = '#24283b'
+# foreground = '#c0caf5'
+#
+# #[colors.cursor]
+# #cursor = '#c0caf5'
+# #text = '#24283b'
+#
+# # Normal colors
+# [colors.normal]
+# black = '#1d202f'
+# red = '#f7768e'
+# green = '#9ece6a'
+# yellow = '#e0af68'
+# blue = '#7aa2f7'
+# magenta = '#bb9af7'
+# cyan = '#7dcfff'
+# white = '#a9b1d6'
+#
+# # Bright colors
+# [colors.bright]
+# black = '#414868'
+# red = '#f7768e'
+# green = '#9ece6a'
+# yellow = '#e0af68'
+# blue = '#7aa2f7'
+# magenta = '#bb9af7'
+# cyan = '#7dcfff'
+# white = '#c0caf5'
+#
+# # Indexed Colors
+# [[colors.indexed_colors]]
+# index = 16
+# color = '#ff9e64'
+#
+# [[colors.indexed_colors]]
+# index = 17
+# color = '#db4b4b'
+
+
+
+
+
 
 [env]
 TERM = "xterm-256color"
@@ -42,6 +141,5 @@ size = 12
 
 [font.normal]
 family = "MesloLGS NF"
-# family = "JetBrains Mono"
 [window]
 dynamic_padding = true
