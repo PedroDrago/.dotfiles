@@ -42,5 +42,6 @@ size = 12
 
 [font.normal]
 family = "MesloLGS NF"
+# family = "JetBrains Mono"
 [window]
 dynamic_padding = true
