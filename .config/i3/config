@@ -7,7 +7,7 @@ exec --no-startup-id setxkbmap -option compose:ralt
 exec_always --no-startup-id xrandr --output HDMI-0 --left-of DP-0
 exec_always --no-startup-id feh --bg-fill ~/.config/i3/wallpaper.png
 # disable capslock
-exec_always --no-startup-id setxkbmap -option ctrl:nocaps
+exec_always --no-startup-id setxkbmap -option caps:escape
 exec_always --no-startup-id xset r rate 200 45
 exec xautolock -detectsleep -time 10 -locker "i3lock -t -i ~/.config/i3/wallpaper.png"
 
@@ -163,17 +163,17 @@ bindsym $mod+Shift+c reload
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'Do you really want to exit i3?' -B 'Yes' 'i3-msg exit'"
 
 
-bindsym $mod+r mode "resize"
-mode "resize" {
-	# horizontal resizing
-        bindsym h resize shrink width 10 px or 10 ppt
-        bindsym l resize grow width 10 px or 10 ppt
-
-        # back to normal: Enter or Escape or $mod+r
-        bindsym Return mode "default"
-        bindsym Escape mode "default"
-        bindsym $mod+r mode "default"
-}
+# bindsym $mod+a mode "resize"
+# mode "resize" {
+# 	# horizontal resizing
+#         bindsym h resize shrink width 10 px or 10 ppt
+#         bindsym l resize grow width 10 px or 10 ppt
+#
+#         # back to normal: Enter or Escape or $mod+r
+#         bindsym Return mode "default"
+#         bindsym Escape mode "default"
+#         bindsym $mod+r mode "default"
+# }
 
 #-----------------------------------------------------------
 #disable mouse auto focus and auto warp
