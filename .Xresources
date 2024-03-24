@@ -24,3 +24,27 @@ URxvt*color12: #82B8C8
 URxvt*color13: #C28CB8
 URxvt*color14: #93D3C3
 URxvt*color15: #F8F8F8
+
+XTerm*font: xft:MesloLGS NF:size=12
+XTerm*scrollBar: false
+XTerm.iso14755: false
+XTerm.iso14755_52: false
+XTerm*background: #181818
+XTerm*foreground: #C0CAF5
+XTerm.vt100: selectToClipboard
+XTerm*color0: #1D1F21
+XTerm*color1: #CC6666
+XTerm*color2: #A6C54F
+XTerm*color3: #EA9B52
+XTerm*color4: #81A2BE
+XTerm*color5: #B294BB
+XTerm*color6: #70C0B1
+XTerm*color7: #C5C8C6
+XTerm*color8: #6B6B6B
+XTerm*color9: #C55555
+XTerm*color10: #AAC474
+XTerm*color11: #FECA88
+XTerm*color12: #82B8C8
+XTerm*color13: #C28CB8
+XTerm*color14: #93D3C3
+XTerm*color15: #F8F8F8
