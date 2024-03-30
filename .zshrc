@@ -25,8 +25,8 @@ source $ZSH/oh-my-zsh.sh
 alias find='fdfind'
 alias fd='fdfind'
 alias grep='rg'
-alias vim='nvim10'
-alias v='nvim10 .'
+alias vim='nvim'
+alias v='nvim .'
 alias ls='exa --icons'
 alias bat='batcat --style=auto'
 alias make='make --no-print-directory'
@@ -38,6 +38,13 @@ alias grademe='bash -c "$(curl https://grademe.fr)"'
 alias pclone='f(){ git clone git@github.com:PedroDrago/"$1" && cd "$1"; }; f'
 alias p='python'
 alias vol='f(){ amixer -D pulse sset Master "$1"%; }; f > /dev/null'
+
+getRecentDownload() {
+    windowsDownloadsLocation="/mnt/c/Users/Jupur/Downloads"
+    fileNameRecentDownload=$(ls -Art $windowsDownloadsLocation | tail -1)
+    mv "$windowsDownloadsLocation/$fileNameRecentDownload" .
+}
+
 #---------------------------------------------------------------------------
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
