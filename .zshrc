@@ -4,50 +4,55 @@
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
-#----------------------------------FZF----------------------------------
+#-----------------------------------KEYBINDINGS----------------------------
+bindkey -s '^F' '. finder'"^M"
+#----------------------------------ENV----------------------------------
 export FZF_DEFAULT_COMMAND='fd --type f --type d --follow --exclude .git'
 export FZF_DEFAULT_OPTS="--height 85% --preview 'batcat --style=numbers --color=always {}'"
-bindkey -s '^F' '. finder'"^M"
-#----------------------------------PATHS----------------------------------
-path+=~/.local/bin
-#-----------------------------------42------------------------------------------
+path+="$HOME/.local/bin"
+path+="/usr/lib/git-fuzzy/bin"
 export MAIL="pdrago@student.42.rio"
 export USER="pdrago"
-export PATH="/usr/lib/git-fuzzy/bin:$PATH"
-#-----------------------------------OH-MY-ZSH-----------------------------------
 export ZSH="$HOME/.oh-my-zsh"
+#-----------------------------------OH-MY-ZSH-----------------------------------
 ZSH_THEME="powerlevel10k/powerlevel10k"
-
 plugins=(git asdf fzf colored-man-pages zsh-autosuggestions zsh-syntax-highlighting)
-
 source $ZSH/oh-my-zsh.sh
 #------------------------------ALIASES------------------------------------
-alias find='fdfind'
 alias fd='fdfind'
+alias find='fd'
 alias grep='rg'
 alias vim='nvim'
-alias v='nvim'
-alias v='nvim .'
 alias ls='exa --icons'
 alias bat='batcat --style=auto'
-alias make='make --no-print-directory'
+alias make='make'
 alias ccf='cc -Wall -Wextra -Werror'
-alias momovim='NVIM_APPNAME=momovim nvim10'
-alias lazyvim='NVIM_APPNAME=lazyvim nvim10'
-alias kickstart='NVIM_APPNAME=kickstart nvim10'
+alias momovim='NVIM_APPNAME=momovim nvim'
+alias lazyvim='NVIM_APPNAME=lazyvim nvim'
+alias kickstart='NVIM_APPNAME=kickstart nvim'
 alias q='exit'
 alias t='tmux'
-alias grademe='bash -c "$(curl https://grademe.fr)"'
-alias pclone='f(){ git clone git@github.com:PedroDrago/"$1" && cd "$1"; }; f'
 alias p='python'
-alias vol='f(){ amixer -D pulse sset Master "$1"%; }; f > /dev/null'
+alias v='nvim'
+#------------------------------FUNCTIONS-----------------------------
+vol() {
+	amixer -D pulse sset Master "$1"% > /dev/null
+}
 
-getRecentDownload() {
+pc() {
+	base_url="git@github.com:"
+	if [[ $1 == *"/"* ]]; then
+		git clone "$base_url/$1"
+	else
+		git clone "$base_url/PedroDrago/$1"
+	fi
+}
+
+getRecentDownload() { #Windows only
     windowsDownloadsLocation="/mnt/c/Users/Jupur/Downloads"
     fileNameRecentDownload=$(ls -Art $windowsDownloadsLocation | tail -1)
     mv "$windowsDownloadsLocation/$fileNameRecentDownload" .
 }
-
 #---------------------------------------------------------------------------
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
