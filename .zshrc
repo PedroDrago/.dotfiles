@@ -5,7 +5,6 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 #-----------------------------------KEYBINDINGS----------------------------
-bindkey -s '^F' '. finder'"^M"
 #----------------------------------ENV----------------------------------
 export FZF_DEFAULT_COMMAND='fd --type f --type d --follow --exclude .git'
 export FZF_DEFAULT_OPTS="--height 85% --preview 'batcat --style=numbers --color=always {}'"
@@ -31,7 +30,6 @@ alias momovim='NVIM_APPNAME=momovim nvim'
 alias lazyvim='NVIM_APPNAME=lazyvim nvim'
 alias kickstart='NVIM_APPNAME=kickstart nvim'
 alias q='exit'
-alias t='tmux'
 alias p='python'
 alias v='nvim'
 #------------------------------FUNCTIONS-----------------------------
@@ -53,6 +51,30 @@ getRecentDownload() { #Windows only
     fileNameRecentDownload=$(ls -Art $windowsDownloadsLocation | tail -1)
     mv "$windowsDownloadsLocation/$fileNameRecentDownload" .
 }
+
+finder(){
+	if [[ $# -eq 1 ]]; then
+		dest=$1
+	else
+		dest=$(fd . ~ --type f --type d --follow --exclude .git --min-depth 1 | fzf)
+	fi
+
+	if [[ -z $dest ]]; then
+		return ;
+	fi
+
+
+	if [ -d $dest ]; then
+		cd $dest
+	else
+		file=$(basename "$dest")
+		dir=$(dirname "$dest")
+		cd $dir && nvim $file
+	fi
+}
+
+bindkey -s '^F' 'finder'"^M"
+
 #---------------------------------------------------------------------------
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
