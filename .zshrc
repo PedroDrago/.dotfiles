@@ -26,11 +26,8 @@ alias find='fdfind'
 alias fd='fdfind'
 alias grep='rg'
 alias vim='nvim'
-<<<<<<< HEAD
 alias v='nvim'
-=======
 alias v='nvim .'
->>>>>>> acb85e99be6131b734815dba5697aeefc1f20aca
 alias ls='exa --icons'
 alias bat='batcat --style=auto'
 alias make='make --no-print-directory'
