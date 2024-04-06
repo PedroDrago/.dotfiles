@@ -4,38 +4,56 @@
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
-#-----------------------------------KEYBINDINGS----------------------------
-#----------------------------------ENV----------------------------------
+#--------------------------------ENV----------------------------------
 export FZF_DEFAULT_COMMAND='fd --type f --type d --follow --exclude .git'
 export FZF_DEFAULT_OPTS="--height 85% --preview 'batcat --style=numbers --color=always {}'"
-path+="$HOME/.local/bin"
-path+="/usr/lib/git-fuzzy/bin"
 export MAIL="pdrago@student.42.rio"
 export USER="pdrago"
 export ZSH="$HOME/.oh-my-zsh"
-#-----------------------------------OH-MY-ZSH-----------------------------------
+path+="$HOME/.local/bin"
+path+="/usr/lib/git-fuzzy/bin"
+#-----------------------------OH-MY-ZSH-----------------------------------
 ZSH_THEME="powerlevel10k/powerlevel10k"
 plugins=(git asdf fzf colored-man-pages zsh-autosuggestions zsh-syntax-highlighting)
 source $ZSH/oh-my-zsh.sh
 #------------------------------ALIASES------------------------------------
-alias fd='fdfind'
+		alias fd="fdfind"
 alias find='fd'
 alias grep='rg'
-alias vim='nvim'
 alias ls='exa --icons'
 alias bat='batcat --style=auto'
 alias make='make'
 alias ccf='cc -Wall -Wextra -Werror'
+alias vim='nvim'
 alias momovim='NVIM_APPNAME=momovim nvim'
 alias lazyvim='NVIM_APPNAME=lazyvim nvim'
 alias kickstart='NVIM_APPNAME=kickstart nvim'
 alias q='exit'
 alias p='python'
 alias v='nvim'
-#------------------------------FUNCTIONS-----------------------------
-vol() {
-	amixer -D pulse sset Master "$1"% > /dev/null
+#---------------------------FUNCTIONS-----------------------------
+nvim_make() {
+	make CMAKE_BUILD_TYPE=RelWithDebInfo CMAKE_INSTALL_PREFIX=~/.local/
+	make install
 }
+nvim_build_nightly() {
+	rm -rf ~/neovim ~/.local/bin/nvim
+	git clone https://github.com/neovim/neovim.git ~/neovim
+	cd ~/neovim
+	make CMAKE_BUILD_TYPE=RelWithDebInfo CMAKE_INSTALL_PREFIX=~/.local/
+	make install
+}
+
+nvim_build_stable() {
+	rm -rf ~/neovim ~/.local/bin/nvim
+	git clone https://github.com/neovim/neovim.git ~/neovim
+	cd ~/neovim
+	git checkout stable
+	make CMAKE_BUILD_TYPE=RelWithDebInfo CMAKE_INSTALL_PREFIX=~/.local/
+	make install
+}
+
+vol() {amixer -D pulse sset Master "$1"% > /dev/null}
 
 pc() {
 	base_url="git@github.com:"
@@ -52,17 +70,16 @@ getRecentDownload() { #Windows only
     mv "$windowsDownloadsLocation/$fileNameRecentDownload" .
 }
 
-finder(){
+finder(){ #NOTE: This finder includes all hidden files, but searches in 2 depth
 	if [[ $# -eq 1 ]]; then
 		dest=$1
 	else
-		dest=$(fd . ~ --type f --type d --follow --exclude .git --min-depth 1 | fzf)
+		dest=$(fd . ~ --type f --type d --follow --exclude .git --min-depth 1 --max-depth 3 --hidden| fzf)
 	fi
 
 	if [[ -z $dest ]]; then
 		return ;
 	fi
-
 
 	if [ -d $dest ]; then
 		cd $dest
@@ -72,9 +89,8 @@ finder(){
 		cd $dir && nvim $file
 	fi
 }
-
+#-------------------------------KEYBINDINGS------------------------------------
 bindkey -s '^F' 'finder'"^M"
-
 #---------------------------------------------------------------------------
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 

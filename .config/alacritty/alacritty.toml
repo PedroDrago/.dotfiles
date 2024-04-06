@@ -50,8 +50,8 @@
 
 ############################ TOKYO NIGHT NIGHT:
 [colors.primary]
-background = '#171C18'
-# background = '#0A0E0C'
+background = '#171C18' # My gray
+# background = '#1a1b26' # Original tokyonight blue
 foreground = '#c0caf5'
 
 [colors.cursor]
