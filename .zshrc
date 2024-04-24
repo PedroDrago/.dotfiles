@@ -17,25 +17,36 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 plugins=(git asdf fzf colored-man-pages zsh-autosuggestions zsh-syntax-highlighting)
 source $ZSH/oh-my-zsh.sh
 #------------------------------ALIASES------------------------------------
-		alias fd="fdfind"
+alias fd="fdfind"
 alias find='fd'
 alias grep='rg'
 alias ls='exa --icons'
 alias bat='batcat --style=auto'
-alias make='make'
-alias ccf='cc -Wall -Wextra -Werror'
-alias vim='nvim'
 alias momovim='NVIM_APPNAME=momovim nvim'
 alias lazyvim='NVIM_APPNAME=lazyvim nvim'
 alias kickstart='NVIM_APPNAME=kickstart nvim'
+alias nvchad='NVIM_APPNAME=nvchad nvim'
+alias astrovim='NVIM_APPNAME=astrovim nvim'
 alias q='exit'
 alias p='python'
-alias v='nvim'
 #---------------------------FUNCTIONS-----------------------------
+
+vim(){
+	while true; do
+		nvim "$@"
+		if [ $? -ne 1 ]; then
+			break
+		fi
+	done
+}
+alias nvim='vim'
+
 nvim_make() {
+	rm -f ~/.local/bin/nvim
 	make CMAKE_BUILD_TYPE=RelWithDebInfo CMAKE_INSTALL_PREFIX=~/.local/
 	make install
 }
+
 nvim_build_nightly() {
 	rm -rf ~/neovim ~/.local/bin/nvim
 	git clone https://github.com/neovim/neovim.git ~/neovim
