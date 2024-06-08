@@ -4,6 +4,9 @@
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
+
+rm -rf $HOME/snap
+
 #--------------------------------ENV----------------------------------
 export FZF_DEFAULT_COMMAND='fd --type f --type d --follow --exclude .git'
 export FZF_DEFAULT_OPTS="--height 85% --preview 'batcat --style=numbers --color=always {}'"
@@ -29,6 +32,7 @@ alias nvchad='NVIM_APPNAME=nvchad nvim'
 alias astrovim='NVIM_APPNAME=astrovim nvim'
 alias q='exit'
 alias p='python'
+alias dush='du -sh'
 #---------------------------FUNCTIONS-----------------------------
 
 vim(){
