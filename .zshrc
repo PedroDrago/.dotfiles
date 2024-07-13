@@ -5,25 +5,29 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-rm -rf $HOME/snap
+# rm -rf $HOME/snap
 #--------------------------------ENV--------------------------------------
+source "$HOME/.env" #files where I export my local dev environment variables
 export FZF_DEFAULT_COMMAND='fd --type f --type d --follow --exclude .git'
 export FZF_DEFAULT_OPTS="--height 85% --preview 'batcat --style=numbers --color=always {}'"
-export MAIL="pdrago@student.42.rio"
-export USER="pdrago"
 export ZSH="$HOME/.oh-my-zsh"
 #-----------------------------OH-MY-ZSH-----------------------------------
 ZSH_THEME="powerlevel10k/powerlevel10k"
 plugins=(git asdf fzf colored-man-pages zsh-autosuggestions zsh-syntax-highlighting)
+path+="$HOME/.local/bin"
 source $ZSH/oh-my-zsh.sh
+export MAIL="pdrago@student.42.rio"
+export USER="pdrago"
 #------------------------------ALIASES------------------------------------
 alias fd="fdfind"
 alias find="fdfind"
 alias grep='rg'
-alias ls='exa --icons'
+alias ls='eza --icons'
 alias bat='batcat --style=auto'
 alias q='exit'
 alias vim='nvim'
+alias chrome='google-chrome'
+alias google='google-chrome'
 #---------------------------FUNCTIONS-------------------------------------
 
 vol() {amixer -D pulse sset Master "$1"% > /dev/null}
@@ -61,3 +65,6 @@ bindkey -s '^F' 'finder'"^M"
 #---------------------------------------------------------------------------
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# To customize prompt, run `p10k configure` or edit ~/.dotfiles/.p10k.zsh.
+[[ ! -f ~/.dotfiles/.p10k.zsh ]] || source ~/.dotfiles/.p10k.zsh

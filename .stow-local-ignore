@@ -2,6 +2,7 @@
 .gitmodules
 scripts
 install
+fonts.sh
 uninstall
 README.md
 TODO.md
