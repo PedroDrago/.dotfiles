@@ -138,9 +138,10 @@ color = '#db4b4b'
 TERM = "xterm-256color"
 
 [font]
-size = 12
+size = 13.5
 
 [font.normal]
-family = "MesloLGS NF"
+# family = "MesloLGS NF"
+family = "JetBrainsMonoNerdFont"
 [window]
 dynamic_padding = true
