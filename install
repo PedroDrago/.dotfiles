@@ -1,8 +1,6 @@
 #! /bin/sh
 
 ./uninstall
-./fonts.sh
 stow --adopt .
 xrdb ~/.Xresources
 cd ~/.dotfiles/.config/nvim && git checkout main
-~/.dotfiles/scripts/install
