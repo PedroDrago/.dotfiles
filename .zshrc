@@ -1,23 +1,20 @@
-# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
-# Initialization code that may require console input (password prompts, [y/n]
-# confirmations, etc.) must go above this block; everything else may go below.
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-# rm -rf $HOME/snap
+eval "$(~/.local/bin/mise activate zsh)"
 #--------------------------------ENV--------------------------------------
-source "$HOME/.env" #files where I export my local dev environment variables
+source "$HOME/.env" #files where I export my local dev environment variables [remove this shit]
 export FZF_DEFAULT_COMMAND='fd --type f --type d --follow --exclude .git'
 export FZF_DEFAULT_OPTS="--height 85% --preview 'batcat --style=numbers --color=always {}'"
 export ZSH="$HOME/.oh-my-zsh"
-#-----------------------------OH-MY-ZSH-----------------------------------
-ZSH_THEME="powerlevel10k/powerlevel10k"
-plugins=(git asdf fzf colored-man-pages zsh-autosuggestions zsh-syntax-highlighting)
-path+="$HOME/.local/bin"
-source $ZSH/oh-my-zsh.sh
 export MAIL="pdrago@student.42.rio"
 export USER="pdrago"
+path+="$HOME/.local/bin"
+#-----------------------------OH-MY-ZSH-----------------------------------
+ZSH_THEME="powerlevel10k/powerlevel10k"
+plugins=(git fzf colored-man-pages zsh-autosuggestions zsh-syntax-highlighting)
+source $ZSH/oh-my-zsh.sh
 #------------------------------ALIASES------------------------------------
 alias fd="fdfind"
 alias find="fdfind"
@@ -29,7 +26,6 @@ alias vim='nvim'
 alias chrome='google-chrome'
 alias google='google-chrome'
 #---------------------------FUNCTIONS-------------------------------------
-
 vol() {amixer -D pulse sset Master "$1"% > /dev/null}
 
 pc() {
@@ -62,9 +58,7 @@ finder(){ #NOTE: This finder includes all hidden files, but searches in 2 depth
 }
 #-------------------------------KEYBINDINGS------------------------------------
 bindkey -s '^F' 'finder'"^M"
-#---------------------------------------------------------------------------
+#------------------------------POWERLEVEl10K-----------------------------------
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-
-# To customize prompt, run `p10k configure` or edit ~/.dotfiles/.p10k.zsh.
 [[ ! -f ~/.dotfiles/.p10k.zsh ]] || source ~/.dotfiles/.p10k.zsh
