@@ -2,6 +2,7 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
+#--------------------------------MISE-------------------------------------
 eval "$(~/.local/bin/mise activate zsh)"
 #--------------------------------ENV--------------------------------------
 source "$HOME/.env" #files where I export my local dev environment variables [remove this shit]
