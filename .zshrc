@@ -40,7 +40,7 @@ finder(){ #NOTE: This finder includes all hidden files, but searches in 2 depth
 	if [[ $# -eq 1 ]]; then
 		dest=$1
 	else
-		dest=$(fd . ~ --type f --type d --follow --exclude .git --min-depth 1 --max-depth 3 --hidden| fzf)
+		dest=$(fd . ~ --type f --type d --follow --exclude .git --min-depth 1 --max-depth 4 --hidden| fzf)
 	fi
 
 	if [[ -z $dest ]]; then
