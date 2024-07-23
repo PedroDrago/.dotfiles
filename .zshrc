@@ -21,11 +21,10 @@ alias fd="fdfind"
 alias find="fdfind"
 alias grep='rg'
 alias ls='eza --icons'
-alias bat='batcat --style=auto'
+alias cat='batcat --style=auto'
 alias q='exit'
 alias vim='nvim'
 alias chrome='google-chrome'
-alias google='google-chrome'
 #---------------------------FUNCTIONS-------------------------------------
 vol() {amixer -D pulse sset Master "$1"% > /dev/null}
 
