@@ -5,14 +5,13 @@ fi
 #--------------------------------MISE-------------------------------------
 eval "$(~/.local/bin/mise activate zsh)"
 #--------------------------------ENV--------------------------------------
-source "$HOME/.env" #files where I export my local dev environment variables [remove this shit]
-export FZF_DEFAULT_COMMAND='fd --type f --type d --follow --exclude .git'
-export FZF_DEFAULT_OPTS="--height 85% --preview 'batcat --style=numbers --color=always {}'"
-export ZSH="$HOME/.oh-my-zsh"
-export MAIL="pdrago@student.42.rio"
-export USER="pdrago"
+FZF_DEFAULT_COMMAND='fd --type f --type d --follow --exclude .git'
+FZF_DEFAULT_OPTS="--height 85% --preview 'batcat --style=numbers --color=always {}'"
+MAIL="pdrago@student.42.rio"
+USER="pdrago"
 path+="$HOME/.local/bin"
 #-----------------------------OH-MY-ZSH-----------------------------------
+ZSH="$HOME/.oh-my-zsh"
 ZSH_THEME="powerlevel10k/powerlevel10k"
 plugins=(git fzf colored-man-pages zsh-autosuggestions zsh-syntax-highlighting)
 source $ZSH/oh-my-zsh.sh
