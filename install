@@ -1,5 +1,17 @@
 #! /bin/sh
 
+# NOTE: The idea is this, to have 2 different installation scripts that install files based on 1 screen vs 2 screens
+# read -p "Enter machine type (laptop/desktop): " machine_type. Need to search good ideas for this. Branching seems the best but maintaining two branches is a pain
+
+# if [ "$machine_type" = "laptop" ]; then
+#     ./laptop.sh
+# elif [ "$machine_type" = "desktop" ]; then
+#     ./desktop.sh
+# else
+#     echo "Invalid machine type. Please enter 'laptop' or 'desktop'."
+# fi
+
+
 ./uninstall
 stow --adopt .
 xrdb ~/.Xresources
