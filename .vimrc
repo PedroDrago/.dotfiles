@@ -54,11 +54,15 @@ map <C-k> <C-W>k
 map <C-h> <C-W>h
 map <C-l> <C-W>l
 
-nmap <leader>s :source %<cr>
-nmap <leader>a :vsplit<cr>
-nmap <leader>A :split<cr>
-nmap <leader>q :q!<cr>
-nmap <leader>t :term<cr>
+nmap <silent> <leader>s :source %<cr>
+nmap <silent> <leader>a :vsplit<cr>
+nmap <silent> <leader>A :split<cr>
+nmap <silent> <leader>q :q!<cr>
+tnoremap <silent> <leader><Esc> <C-\><C-n>
+"the above line should change. The ideal would be esc to exit the terminal
+"mode instantly, but something is wrong and it takes too long (other esc
+"keymap blocking or something like that
+nmap <silent> <leader>t :botright term<cr>
 
 
 nmap <leader>e :Ex<cr>
@@ -72,4 +76,4 @@ nnoremap <expr> k (v:count > 1 ? 'm`' . v:count : 'g') . 'k'
 nnoremap <leader>h <cmd>noh<cr>
 
 let g:netrw_liststyle = 3
-colorscheme elflord
+colorscheme retrobox
