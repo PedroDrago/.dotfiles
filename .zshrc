@@ -7,8 +7,6 @@ eval "$(~/.local/bin/mise activate zsh)"
 #--------------------------------ENV--------------------------------------
 FZF_DEFAULT_COMMAND='fd --type f --type d --follow --exclude .git'
 FZF_DEFAULT_OPTS="--height 85% --preview 'batcat --style=numbers --color=always {}'"
-MAIL="pdrago@student.42.rio"
-USER="pdrago"
 path+="$HOME/.local/bin"
 #-----------------------------OH-MY-ZSH-----------------------------------
 ZSH="$HOME/.oh-my-zsh"
