@@ -29,9 +29,9 @@ vol() {amixer -D pulse sset Master "$1"% > /dev/null}
 pc() {
 	base_url="git@github.com:"
 	if [[ $1 == *"/"* ]]; then
-		git clone "$base_url/$1"
+		git clone --recursive "$base_url/$1"
 	else
-		git clone "$base_url/PedroDrago/$1"
+		git clone --recursive "$base_url/PedroDrago/$1"
 	fi
 }
 

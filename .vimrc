@@ -54,26 +54,24 @@ map <C-k> <C-W>k
 map <C-h> <C-W>h
 map <C-l> <C-W>l
 
-nmap <silent> <leader>s :source %<cr>
-nmap <silent> <leader>a :vsplit<cr>
-nmap <silent> <leader>A :split<cr>
-nmap <silent> <leader>q :q!<cr>
-tnoremap <silent> <leader><Esc> <C-\><C-n>
+nmap <silent> <leader>s :source %<CR>
+nmap <silent> <leader>a :vsplit<CR>
+nmap <silent> <leader>A :split<CR>
+nmap <silent> <leader>q :q!<CR>
+tnoremap <silent> <Esc> <C-\><C-n>
 "the above line should change. The ideal would be esc to exit the terminal
 "mode instantly, but something is wrong and it takes too long (other esc
 "keymap blocking or something like that
-nmap <silent> <leader>t :botright term<cr>
+nmap <silent> <leader>t :botright term<CR>
 
+map <silent> <C-d> <C-d>zz
+map <silent> <C-u> <C-u>zz
 
-nmap <leader>e :Ex<cr>
-nmap <leader>E :Rex<cr>
-
-map <C-d> <C-d>zz
-map <C-u> <C-u>zz
+nmap <silent> <leader>e :Explore<CR>
 
 nnoremap <expr> j (v:count > 1 ? 'm`' . v:count : 'g') . 'j'
 nnoremap <expr> k (v:count > 1 ? 'm`' . v:count : 'g') . 'k'
-nnoremap <leader>h <cmd>noh<cr>
+nnoremap <leader>h <cmd>noh<CR>
 
 let g:netrw_liststyle = 3
 colorscheme retrobox
