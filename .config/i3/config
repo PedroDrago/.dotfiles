@@ -113,7 +113,8 @@ bar {
 
 bar {
   output $secondary_monitor
-  status_command i3status --config $HOME/.config/i3status/second_monitor.conf
+  # status_command i3status --config $HOME/.config/i3status/second_monitor.conf
+  status_command i3status
   position top
   font pango:Jetbrains Mono NF 10
   colors {
