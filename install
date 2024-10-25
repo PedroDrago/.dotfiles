@@ -22,3 +22,5 @@ case $1 in
         ln -s $HOME/.dotfiles/.config/i3/dual_monitor_config $HOME/.config/i3/config
         ;;
 esac
+
+        ln -s $HOME/.dotfiles/.config/i3/wallpaper.png $HOME/.config/i3/
