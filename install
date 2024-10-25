@@ -1,18 +1,27 @@
 #! /bin/sh
 
-# NOTE: The idea is this, to have 2 different installation scripts that install files based on 1 screen vs 2 screens
-# read -p "Enter machine type (laptop/desktop): " machine_type. Need to search good ideas for this. Branching seems the best but maintaining two branches is a pain
-
-# if [ "$machine_type" = "laptop" ]; then
-#     ./laptop.sh
-# elif [ "$machine_type" = "desktop" ]; then
-#     ./desktop.sh
-# else
-#     echo "Invalid machine type. Please enter 'laptop' or 'desktop'."
-# fi
-
-
 ./uninstall
-stow --adopt .
+
+stow --adopt . #maybe uninstall could be just stow -D (delete)
 xrdb ~/.Xresources
 cd ~/.dotfiles/.config/nvim && git checkout main
+
+mkdir -p $HOME/.config/i3
+
+echo "1) Single Monitor"
+echo "2) Dual Monitor"
+read -p ": " monitor_setup
+
+case $monitor_setup in
+    1)
+        echo "You have selected a Single Monitor setup."
+        ln -s $HOME/.dotfiles/.config/i3/single_monitor_config $HOME/.config/i3/config
+        ;;
+    2)
+        echo "You have selected a Dual Monitor setup."
+        ln -s $HOME/.dotfiles/.config/i3/dual_monitor_config $HOME/.config/i3/config
+        ;;
+    *)
+        echo "Invalid selection. Please run the script again and enter 1 or 2."
+        ;;
+esac
