@@ -100,7 +100,7 @@ bar {
   separator_symbol "|"
   font pango:Jetbrains Mono NF 10
   colors {
-    background #171C18
+    background #171C18 # my gray
     statusline #F8F8F8
     focused_workspace #61AFEF #61AFEF #171C18
     active_workspace #222222 #222222 #888888

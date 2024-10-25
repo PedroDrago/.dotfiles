@@ -50,9 +50,9 @@
 
 ############################ TOKYO NIGHT NIGHT:
 [colors.primary]
-background = '#171C18' # My gray
+# background = '#171C18' # My gray
 # background = '#0D1117' # Github
-# background = '#1a1b26' # Original tokyonight blue
+background = '#1a1b26' # Original tokyonight blue
 foreground = '#c0caf5'
 
 [colors.cursor]
@@ -129,10 +129,6 @@ color = '#db4b4b'
 # [[colors.indexed_colors]]
 # index = 17
 # color = '#db4b4b'
-
-
-
-
 
 
 [env]
