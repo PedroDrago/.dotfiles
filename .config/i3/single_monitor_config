@@ -21,9 +21,9 @@ bindsym $mod+Return exec alacritty
 #bindsym $mod+Returnsd exec urxvt
 
 #-----------WORKSPACES-----------------
-# create monitors variables
-SET $primary_monitor DP-0
-SET $secondary_monitor HDMI-0
+# create monitors variables NOTE: This will change, need to think and discover infos about external monitor
+# SET $primary_monitor DP-0
+# SET $secondary_monitor HDMI-0
 
 # create workspaces variables
 set $ws1 "1"
@@ -37,35 +37,35 @@ set $ws8 "8"
 set $ws9 "9"
 set $ws0 "0"
 
-workspace 1 output $primary_monitor
-#workspace 1 output $secondary_monitor
-
-workspace 2 output $primary_monitor
-#workspace 2 output $secondary_monitor
-
-workspace 3 output $primary_monitor
-#workspace 3 output $secondary_monitor
-
-# workspace 4 output $primary_monitor
-#workspace 4 output $secondary_monitor
-
-# workspace 5 output $primary_monitor
-workspace 5 output $secondary_monitor
-
-# workspace 6 output $primary_monitor
-workspace 6 output $secondary_monitor
-
-# workspace 7 output $primary_monitor
-workspace 7 output $secondary_monitor
-
-workspace 8 output $primary_monitor
-#workspace 8 output $secondary_monitor
-
-workspace 9 output $primary_monitor
-#workspace 9 output $secondary_monitor
-
-workspace 0 output $primary_monitor
-#workspace 0 output $secondary_monitor
+# workspace 1 output $primary_monitor
+# #workspace 1 output $secondary_monitor
+#
+# workspace 2 output $primary_monitor
+# #workspace 2 output $secondary_monitor
+#
+# workspace 3 output $primary_monitor
+# #workspace 3 output $secondary_monitor
+#
+# # workspace 4 output $primary_monitor
+# #workspace 4 output $secondary_monitor
+#
+# # workspace 5 output $primary_monitor
+# workspace 5 output $secondary_monitor
+#
+# # workspace 6 output $primary_monitor
+# workspace 6 output $secondary_monitor
+#
+# # workspace 7 output $primary_monitor
+# workspace 7 output $secondary_monitor
+#
+# workspace 8 output $primary_monitor
+# #workspace 8 output $secondary_monitor
+#
+# workspace 9 output $primary_monitor
+# #workspace 9 output $secondary_monitor
+#
+# workspace 0 output $primary_monitor
+# #workspace 0 output $secondary_monitor
 
 # switch to workspace
 bindsym $mod+1 workspace number $ws1
@@ -93,26 +93,6 @@ bindsym $mod+Shift+0 move container to workspace number $ws10
 #-----------------------BAR-------------------------
 
 bar {
-  output $primary_monitor
-  status_command i3status
-  position top
-  tray_output none
-  separator_symbol "|"
-  font pango:Jetbrains Mono NF 10
-  colors {
-    background #171C18 # my gray
-    statusline #F8F8F8
-    focused_workspace #61AFEF #61AFEF #171C18
-    active_workspace #222222 #222222 #888888
-    urgent_workspace #CC6666 #CC6666 #F8F8F8
-  }
-  #disable mouse scrolling
-  bindsym button4 nop
-  bindsym button5 nop
-}
-
-bar {
-  output $secondary_monitor
   status_command i3status
   position top
   font pango:Jetbrains Mono NF 10
