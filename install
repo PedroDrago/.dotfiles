@@ -8,20 +8,17 @@ cd ~/.dotfiles/.config/nvim && git checkout main
 
 mkdir -p $HOME/.config/i3
 
-echo "1) Single Monitor"
-echo "2) Dual Monitor"
-read -p ": " monitor_setup
-
-case $monitor_setup in
-    1)
+case $1 in
+    "single")
         echo "You have selected a Single Monitor setup."
         ln -s $HOME/.dotfiles/.config/i3/single_monitor_config $HOME/.config/i3/config
         ;;
-    2)
+    "dual")
         echo "You have selected a Dual Monitor setup."
         ln -s $HOME/.dotfiles/.config/i3/dual_monitor_config $HOME/.config/i3/config
         ;;
     *)
-        echo "Invalid selection. Please run the script again and enter 1 or 2."
+        echo "Defaulting to Dual Monitor setup"
+        ln -s $HOME/.dotfiles/.config/i3/dual_monitor_config $HOME/.config/i3/config
         ;;
 esac
