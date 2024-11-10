@@ -28,11 +28,13 @@ vol() {amixer -D pulse sset Master "$1"% > /dev/null}
 
 pc() {
 	base_url="git@github.com:"
-	if [[ $1 == *"/"* ]]; then
-		git clone --recursive "$base_url/$1"
-	else
-		git clone --recursive "$base_url/PedroDrago/$1"
-	fi
+    for repo in "$@"; do
+        if [[ $repo == *"/"* ]]; then
+            git clone --recursive "$base_url/$repo"
+        else
+            git clone --recursive "$base_url/PedroDrago/$repo"
+        fi
+    done
 }
 
 finder(){ #NOTE: This finder includes all hidden files, but searches in 2 depth
