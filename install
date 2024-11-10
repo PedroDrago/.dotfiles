@@ -8,19 +8,21 @@ cd ~/.dotfiles/.config/nvim && git checkout main
 
 mkdir -p $HOME/.config/i3
 
-case $1 in
-    "single")
+MONITORS=$(xrandr | grep -sw 'connected' | wc -l)
+
+case $MONITORS in
+    1)
         echo "You have selected a Single Monitor setup."
         ln -s $HOME/.dotfiles/.config/i3/single_monitor_config $HOME/.config/i3/config
         ;;
-    "dual")
-        echo "You have selected a Dual Monitor setup."
+    2)
+        echo "Dual Monitor setup"
         ln -s $HOME/.dotfiles/.config/i3/dual_monitor_config $HOME/.config/i3/config
         ;;
     *)
-        echo "Defaulting to Dual Monitor setup"
+        echo "More than 2? I was not prepared to that. Defaulting to Dual Monitor setup"
         ln -s $HOME/.dotfiles/.config/i3/dual_monitor_config $HOME/.config/i3/config
         ;;
 esac
 
-        ln -s $HOME/.dotfiles/.config/i3/wallpaper.png $HOME/.config/i3/
+ln -s $HOME/.dotfiles/.config/i3/wallpaper.png $HOME/.config/i3/
