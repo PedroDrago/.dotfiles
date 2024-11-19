@@ -74,4 +74,8 @@ nnoremap <expr> k (v:count > 1 ? 'm`' . v:count : 'g') . 'k'
 nnoremap <leader>h <cmd>noh<CR>
 
 let g:netrw_liststyle = 3
-colorscheme retrobox
+try
+    colorscheme retrobox
+catch
+    colorscheme koehler
+endtry
