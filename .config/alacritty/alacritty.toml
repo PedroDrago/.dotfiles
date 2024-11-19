@@ -140,5 +140,11 @@ size = 11
 [font.normal]
 # family = "MesloLGS NF"
 family = "Jetbrains Mono NF"
+# family = "JetbrainsMonoNL Nerd Font" # Windows
 [window]
 dynamic_padding = true
+
+# [terminal.shell] # windows
+# program = "C:\\Windows\\System32\\wsl.exe"
+# # args: --cd ~
+# args = [ "--cd", "~"]
