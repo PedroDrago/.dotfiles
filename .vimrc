@@ -64,6 +64,9 @@ tnoremap <silent> <Esc> <C-\><C-n>
 "keymap blocking or something like that
 nmap <silent> <leader>t :botright term<CR>
 
+autocmd TerminalOpen * setlocal nonumber norelativenumber
+
+
 map <silent> <C-d> <C-d>zz
 map <silent> <C-u> <C-u>zz
 
@@ -73,9 +76,15 @@ nnoremap <expr> j (v:count > 1 ? 'm`' . v:count : 'g') . 'j'
 nnoremap <expr> k (v:count > 1 ? 'm`' . v:count : 'g') . 'k'
 nnoremap <leader>h <cmd>noh<CR>
 
+set timeoutlen=300 ttimeoutlen=10
+
+
+
 let g:netrw_liststyle = 3
 try
     colorscheme retrobox
 catch
     colorscheme koehler
 endtry
+
+highlight! EndOfBuffer ctermbg=bg ctermfg=bg guibg=bg guifg=bg
