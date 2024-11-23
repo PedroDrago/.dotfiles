@@ -23,6 +23,7 @@ alias q='exit'
 alias vim='nvim'
 alias chrome='google-chrome'
 alias -g W='| nvim -c "setlocal buftype=nofile bufhidden=wipe" -c "nnoremap <buffer> q :q!<CR>" -'
+alias nvima='nvim $(find . -t file)'
 #---------------------------FUNCTIONS-------------------------------------
 vol() {amixer -D pulse sset Master "$1"% > /dev/null}
 
