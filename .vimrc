@@ -87,4 +87,14 @@ catch
     colorscheme koehler
 endtry
 
-highlight! EndOfBuffer ctermbg=bg ctermfg=bg guibg=bg guifg=bg
+if !has('win32')
+    highlight! EndOfBuffer ctermbg=bg ctermfg=bg guibg=bg guifg=bg
+endif
+
+
+if has('win32')
+    if has("gui_running")
+        set guifont=JetBrainsMonoNL\ NFM\ Thin:h11
+    endif
+endif
+
