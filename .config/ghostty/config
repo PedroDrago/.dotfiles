@@ -1,5 +1,5 @@
 cursor-style-blink=false
-background=171C18
+# background=171C18
 wait-after-command=false
 clipboard-read=allow
 clipboard-write=allow
@@ -11,3 +11,7 @@ resize-overlay=never
 gtk-single-instance = true
 theme=tokyonight_night
 keybind=ctrl+enter=unbind
+font-feature=-liga
+font-feature=-calt
+font-feature=-dlig
+window-padding-color=background
