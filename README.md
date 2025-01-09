@@ -10,7 +10,7 @@ git clone --recurse-submodules git@github.com:PedroDrago/.dotfiles.git && cd .do
 
 ### My Tools
 - **Distro**: [Debian](https://www.debian.org/)
-- **Terminal**: [Alacritty](https://github.com/alacritty/alacritty) (current trying [ghostty](https://ghostty.org/) out)
+- **Terminal**: [Alacritty](https://github.com/alacritty/alacritty)
 - **shell**: [zsh](https://www.zsh.org/) with [oh-my-zsh](https://github.com/ohmyzsh/ohmyzsh) and [Powerlevel10k](https://github.com/romkatv/powerlevel10k)
 - **Tiling Manager**: [i3wm](https://i3wm.org/)
 - **Text Editor**: [Neovim](https://github.com/neovim/neovim)
@@ -18,6 +18,9 @@ git clone --recurse-submodules git@github.com:PedroDrago/.dotfiles.git && cd .do
 ### Todo
 # Terminal Multiplexer
 - Create a good framework for using tmux
+
+# Shell 
+- Fix shell flickering on startup
 
 # Vscode
 - Good stable vscode configuration (almost done. Just lacking a few vim bindings)
