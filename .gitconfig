@@ -11,3 +11,5 @@
 [safe]
 	directory = /mnt/share/vault
 	directory = *
+[push]
+	autoSetupRemote = true
