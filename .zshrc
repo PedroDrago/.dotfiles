@@ -15,14 +15,12 @@ plugins=(git fzf colored-man-pages zsh-autosuggestions zsh-syntax-highlighting)
 source $ZSH/oh-my-zsh.sh
 #------------------------------ALIASES------------------------------------
 alias fd="fdfind"
-alias find="fdfind"
 alias grep='rg'
 alias ls='eza --icons'
-alias cat='batcat --style=auto'
+alias bat='batcat --style=auto'
 alias q='exit'
 alias vim='nvim'
 alias chrome='google-chrome'
-alias -g W='| nvim -c "setlocal buftype=nofile bufhidden=wipe" -c "nnoremap <buffer> q :q!<CR>" -'
 alias nvima='nvim $(find . -t file)'
 #---------------------------FUNCTIONS-------------------------------------
 vol() {amixer -D pulse sset Master "$1"% > /dev/null}
