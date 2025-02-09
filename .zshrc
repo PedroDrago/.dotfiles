@@ -21,7 +21,7 @@ alias bat='batcat --style=auto'
 alias q='exit'
 alias vim='nvim'
 alias chrome='google-chrome'
-alias nvima='nvim $(find . -t file)'
+alias nvima='nvim $(fd . -t file)'
 #---------------------------FUNCTIONS-------------------------------------
 vol() {amixer -D pulse sset Master "$1"% > /dev/null}
 

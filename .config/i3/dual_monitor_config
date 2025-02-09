@@ -1,5 +1,6 @@
 set $mod Mod1
 
+# https://www.reddit.com/r/i3wm/comments/12y02cu/how_can_i_add_two_different_keyboard_layout_button/#:~:text=You%20can%20do%20all%20of%20that%20thru%20your%20i3%20config.&text=It%20sets%20both%20keyboard%20layouts,can%20toggle%20between%20the%20two.
 # set compose key as AltGr
 exec --no-startup-id setxkbmap -option compose:ralt
 
@@ -153,28 +154,28 @@ bindsym $mod+Shift+l move right
 bindsym $mod+f fullscreen toggle
 bindsym $mod+q kill
 
-bindsym $mod+s layout stacking
-bindsym $mod+t layout tabbed
-bindsym $mod+a layout toggle split
+# bindsym $mod+s layout stacking
+# bindsym $mod+t layout tabbed
+# bindsym $mod+a layout toggle split
 
-bindsym $mod+space floating toggle
+bindsym $mod+i floating toggle
 
 bindsym $mod+Shift+r restart
 bindsym $mod+Shift+c reload
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'Do you really want to exit i3?' -B 'Yes' 'i3-msg exit'"
 
 
-# bindsym $mod+a mode "resize"
-# mode "resize" {
-# 	# horizontal resizing
-#         bindsym h resize shrink width 10 px or 10 ppt
-#         bindsym l resize grow width 10 px or 10 ppt
-#
-#         # back to normal: Enter or Escape or $mod+r
-#         bindsym Return mode "default"
-#         bindsym Escape mode "default"
-#         bindsym $mod+r mode "default"
-# }
+bindsym $mod+a mode "resize"
+mode "resize" {
+	# horizontal resizing
+        bindsym h resize shrink width 10 px or 10 ppt
+        bindsym l resize grow width 10 px or 10 ppt
+
+        # back to normal: Enter or Escape or $mod+r
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+        bindsym $mod+r mode "default"
+}
 
 #-----------------------------------------------------------
 #disable mouse auto focus and auto warp
