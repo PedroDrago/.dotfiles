@@ -8,6 +8,11 @@ eval "$(~/.local/bin/mise activate zsh)"
 FZF_DEFAULT_COMMAND='fd --type f --type d --follow --exclude .git'
 FZF_DEFAULT_OPTS="--height 85% --preview 'batcat --style=numbers --color=always {}'"
 path+="$HOME/.local/bin"
+if lscpu | grep "Model name" | grep -q "i7-8700"; then
+    export MACHINE="desktop"
+else
+    export MACHINE="-"
+fi
 #-----------------------------OH-MY-ZSH-----------------------------------
 ZSH="$HOME/.oh-my-zsh"
 ZSH_THEME="powerlevel10k/powerlevel10k"
@@ -19,7 +24,6 @@ alias grep='rg'
 alias ls='eza --icons'
 alias bat='batcat --style=auto'
 alias q='exit'
-alias vim='nvim'
 alias chrome='google-chrome'
 alias nvima='nvim $(fd . -t file)'
 #---------------------------FUNCTIONS-------------------------------------
