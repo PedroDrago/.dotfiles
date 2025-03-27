@@ -21,6 +21,7 @@ source $ZSH/oh-my-zsh.sh
 #------------------------------ALIASES------------------------------------
 alias fd="fdfind"
 alias grep='rg'
+alias vim='nvim'
 alias ls='eza --icons'
 alias bat='batcat --style=auto'
 alias q='exit'

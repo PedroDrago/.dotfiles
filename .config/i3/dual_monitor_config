@@ -9,16 +9,14 @@ exec_always --no-startup-id xrandr --output HDMI-0 --left-of DP-0
 exec_always --no-startup-id feh --bg-fill ~/.config/i3/wallpaper.png
 # disable capslock
 # exec_always --no-startup-id setxkbmap -option caps:escape
-exec_always --no-startup-id setxkbmap -option ctrl:nocaps
+exec_always --no-startup-id setxkbmap -option ctrl:nocaps -layout us,br -variant ,abnt2 -option "grp:win_space_toggle"
 # exec_always --no-startup-id xset r rate 200 45
 exec xautolock -detectsleep -time 10 -locker "i3lock -t -i ~/.config/i3/wallpaper.png"
-
 #-----------Applications--------------------
 bindsym Print exec flameshot gui
 bindsym Control+shift+l exec "i3lock -t -i ~/.config/i3/wallpaper.png"
 bindsym $mod+d exec --no-startup-id dmenu_run -i -nb "#171C18" -nf "#F8F8F8" -sb "#61AFEF" -sf "#171C18"
 bindsym $mod+Return exec alacritty
-
 #-----------WORKSPACES-----------------
 # create monitors variables
 SET $primary_monitor DP-0
@@ -113,6 +111,7 @@ bar {
 bar {
   output $secondary_monitor
   status_command i3status
+  tray_output none
   position top
   font pango:Jetbrains Mono NF 10
   colors {
