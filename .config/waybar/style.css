@@ -55,6 +55,7 @@ button:hover {
 }
 
 #workspaces button {
+    /* border-radius: 5%; */
     padding: 0 5px;
     background-color: transparent;
     color: #ffffff;
@@ -124,7 +125,13 @@ button:hover {
 }
 
 #battery.charging, #battery.plugged {
-    color: #ffffff;
+    /* color: #ffffff; */
+    color: #e0af68;
+    /* animation-name: blink; */
+    /* animation-duration: 0.5s; */
+    /* animation-timing-function: steps(12); */
+    /* animation-iteration-count: infinite; */
+    /* animation-direction: alternate; */
     /* background-color: #26A65B; */
 }
 

@@ -19,14 +19,13 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 plugins=(git fzf colored-man-pages zsh-autosuggestions zsh-syntax-highlighting)
 source $ZSH/oh-my-zsh.sh
 #------------------------------ALIASES------------------------------------
-alias fd="fdfind"
+# alias fd="fdfind"
 alias grep='rg'
 #alias vim='nvim'
 alias ls='eza --icons'
 alias bat='bat --style=auto'
 alias q='exit'
 alias nvima='nvim $(fd . -t file)'
-alias neofetch='fastfetch'
 #---------------------------FUNCTIONS-------------------------------------
 #vol() {amixer -D pulse sset Master "$1"% > /dev/null}
 vol() {wpctl set-volume @DEFAULT_AUDIO_SINK@ "$1"%}
