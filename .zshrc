@@ -26,6 +26,7 @@ alias ls='eza --icons'
 alias bat='bat --style=auto'
 alias q='exit'
 alias nvima='nvim $(fd . -t file)'
+alias neofetch='fastfetch'
 #---------------------------FUNCTIONS-------------------------------------
 #vol() {amixer -D pulse sset Master "$1"% > /dev/null}
 vol() {wpctl set-volume @DEFAULT_AUDIO_SINK@ "$1"%}

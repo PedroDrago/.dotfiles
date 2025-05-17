@@ -112,23 +112,23 @@ bindsym $mod+Shift+0 move container to workspace number $ws10
 #
 #}
 
-bar {
-    position top
-
-    status_command while date +'%Y-%m-%d %X'; do sleep 1; done
-    font pango:Jetbrains Mono NF 10
-
-    colors {
-        background #171C18
-        statusline #F8F8F8
-        focused_workspace #61AFEF #61AFEF #171C18
-        active_workspace #222222 #222222 #888888
-        urgent_workspace #CC6666 #CC6666 #F8F8F8
-    }
-    #  #disable mouse scrolling
-     bindsym button4 nop
-     bindsym button5 nop
-}
+# bar {
+#     position top
+#
+#     status_command while date +'%Y-%m-%d %X'; do sleep 1; done
+#     font pango:Jetbrains Mono NF 10
+#
+#     colors {
+#         background #171C18
+#         statusline #F8F8F8
+#         focused_workspace #61AFEF #61AFEF #171C18
+#         active_workspace #222222 #222222 #888888
+#         urgent_workspace #CC6666 #CC6666 #F8F8F8
+#     }
+#     #  #disable mouse scrolling
+#      bindsym button4 nop
+#      bindsym button5 nop
+# }
 
 #-----------------------TILES-------------------------------
 #change border size and remove title
