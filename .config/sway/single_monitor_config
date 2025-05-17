@@ -1,0 +1,172 @@
+set $mod Mod1
+
+# set compose key as AltGr
+exec --no-startup-id setxkbmap -option compose:ralt
+
+#-----------I3STARTUP-CONFIGS--------------------
+exec_always --no-startup-id xrandr --output HDMI-0 --left-of DP-0
+exec_always --no-startup-id feh --bg-fill ~/.config/i3/wallpaper.png
+# disable capslock
+# exec_always --no-startup-id setxkbmap -option caps:escape
+exec_always --no-startup-id setxkbmap -option ctrl:nocaps
+# exec_always --no-startup-id xset r rate 200 45
+exec xautolock -detectsleep -time 10 -locker "i3lock -t -i ~/.config/i3/wallpaper.png"
+
+#-----------Applications--------------------
+bindsym Print exec flameshot gui
+bindsym Control+shift+l exec "i3lock -t -i ~/.config/i3/wallpaper.png"
+bindsym $mod+d exec --no-startup-id dmenu_run -i -nb "#171C18" -nf "#F8F8F8" -sb "#61AFEF" -sf "#171C18"
+bindsym $mod+Return exec alacritty
+# bindsym $mod+Return exec wezterm
+#bindsym $mod+Returnsd exec urxvt
+
+#-----------WORKSPACES-----------------
+# create monitors variables NOTE: This will change, need to think and discover infos about external monitor
+# SET $primary_monitor DP-0
+# SET $secondary_monitor HDMI-0
+
+# create workspaces variables
+set $ws1 "1"
+set $ws2 "2"
+set $ws3 "3"
+set $ws4 "4"
+set $ws5 "5"
+set $ws6 "6"
+set $ws7 "7"
+set $ws8 "8"
+set $ws9 "9"
+set $ws0 "0"
+
+# workspace 1 output $primary_monitor
+# #workspace 1 output $secondary_monitor
+#
+# workspace 2 output $primary_monitor
+# #workspace 2 output $secondary_monitor
+#
+# workspace 3 output $primary_monitor
+# #workspace 3 output $secondary_monitor
+#
+# # workspace 4 output $primary_monitor
+# #workspace 4 output $secondary_monitor
+#
+# # workspace 5 output $primary_monitor
+# workspace 5 output $secondary_monitor
+#
+# # workspace 6 output $primary_monitor
+# workspace 6 output $secondary_monitor
+#
+# # workspace 7 output $primary_monitor
+# workspace 7 output $secondary_monitor
+#
+# workspace 8 output $primary_monitor
+# #workspace 8 output $secondary_monitor
+#
+# workspace 9 output $primary_monitor
+# #workspace 9 output $secondary_monitor
+#
+# workspace 0 output $primary_monitor
+# #workspace 0 output $secondary_monitor
+
+# switch to workspace
+bindsym $mod+1 workspace number $ws1
+bindsym $mod+2 workspace number $ws2
+bindsym $mod+3 workspace number $ws3
+bindsym $mod+4 workspace number $ws4
+bindsym $mod+5 workspace number $ws5
+bindsym $mod+6 workspace number $ws6
+bindsym $mod+7 workspace number $ws7
+bindsym $mod+8 workspace number $ws8
+bindsym $mod+9 workspace number $ws9
+bindsym $mod+0 workspace number $ws10
+
+# move focused container to workspace
+bindsym $mod+Shift+1 move container to workspace number $ws1
+bindsym $mod+Shift+2 move container to workspace number $ws2
+bindsym $mod+Shift+3 move container to workspace number $ws3
+bindsym $mod+Shift+4 move container to workspace number $ws4
+bindsym $mod+Shift+5 move container to workspace number $ws5
+bindsym $mod+Shift+6 move container to workspace number $ws6
+bindsym $mod+Shift+7 move container to workspace number $ws7
+bindsym $mod+Shift+8 move container to workspace number $ws8
+bindsym $mod+Shift+9 move container to workspace number $ws9
+bindsym $mod+Shift+0 move container to workspace number $ws10
+#-----------------------BAR-------------------------
+
+bar {
+  status_command i3status
+  position top
+  font pango:Jetbrains Mono NF 10
+  colors {
+    background #171C18
+    statusline #F8F8F8
+    focused_workspace #61AFEF #61AFEF #171C18
+    active_workspace #222222 #222222 #888888
+    urgent_workspace #CC6666 #CC6666 #F8F8F8
+  }
+  #disable mouse scrolling
+  bindsym button4 nop
+  bindsym button5 nop
+
+}
+
+#-----------------------TILES-------------------------------
+#change border size and remove title
+for_window [class="^.*"] border pixel 2
+client.focused #222222 #222222 #9FDDFF #61AFEF #61AFEF
+# set $h_gaps 10
+# set $v_gaps 10
+#
+# # Gaps
+# gaps inner $h_gaps $v_gaps
+
+# Use Mouse+$mod to drag floating windows to their wanted position
+floating_modifier $mod
+
+bindsym $mod+h focus left
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+l focus right
+
+bindsym $mod+Shift+h move left
+bindsym $mod+Shift+j move down
+bindsym $mod+Shift+k move up
+bindsym $mod+Shift+l move right
+
+bindsym $mod+f fullscreen toggle
+bindsym $mod+q kill
+
+bindsym $mod+s layout stacking
+bindsym $mod+t layout tabbed
+bindsym $mod+a layout toggle split
+
+bindsym $mod+space floating toggle
+
+bindsym $mod+Shift+r restart
+bindsym $mod+Shift+c reload
+bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'Do you really want to exit i3?' -B 'Yes' 'i3-msg exit'"
+
+
+# bindsym $mod+a mode "resize"
+# mode "resize" {
+# 	# horizontal resizing
+#         bindsym h resize shrink width 10 px or 10 ppt
+#         bindsym l resize grow width 10 px or 10 ppt
+#
+#         # back to normal: Enter or Escape or $mod+r
+#         bindsym Return mode "default"
+#         bindsym Escape mode "default"
+#         bindsym $mod+r mode "default"
+# }
+
+#-----------------------------------------------------------
+#disable mouse auto focus and auto warp
+focus_follows_mouse no
+mouse_warping none
+
+font pango:MesloLGS NF 10
+
+exec --no-startup-id dex --autostart --environment i3
+exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
+exec --no-startup-id nm-applet
+
+set $refresh_i3status killall -SIGUSR1 i3status

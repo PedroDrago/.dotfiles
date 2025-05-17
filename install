@@ -3,10 +3,7 @@
 ./uninstall
 
 stow --adopt . #maybe uninstall could be just stow -D (delete)
-xrdb ~/.Xresources
 cd ~/.dotfiles/.config/nvim && git checkout main
-
-mkdir -p $HOME/.config/i3
 
 MONITORS=$(xrandr | grep -sw 'connected' | wc -l)
 
