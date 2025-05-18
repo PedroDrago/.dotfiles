@@ -19,3 +19,6 @@ git clone --recurse-submodules git@github.com:PedroDrago/.dotfiles.git && cd .do
 
 # install/uninstall scripts
 - automate uninstall script. Probably using stow for remove is a good ideal
+
+# hyprland
+- tune animations: make them shorter, almost instant but still smooth
