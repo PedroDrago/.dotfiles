@@ -15,3 +15,7 @@ git clone --recurse-submodules git@github.com:PedroDrago/.dotfiles.git && cd .do
 1. style
     - theme
     - remove "drun" from start
+
+
+# install/uninstall scripts
+- automate uninstall script. Probably using stow for remove is a good ideal
