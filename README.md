@@ -10,5 +10,8 @@ git clone --recurse-submodules git@github.com:PedroDrago/.dotfiles.git && cd .do
 # Shell 
 - Fix shell flickering on startup
 
-# Vscode
-- Good stable vscode configuration (almost done. Just lacking a few vim bindings)
+# Rofi / Wofi
+1. arbitrary web search with ! or ?
+1. style
+    - theme
+    - remove "drun" from start

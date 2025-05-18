@@ -1,6 +1,15 @@
+# start uwsm compositor selector screen
+if uwsm check may-start && uwsm select; then
+	exec uwsm start default
+fi
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
+
+#bypass screen and starts hyprland directly
+# if uwsm check may-start; then
+#     exec uwsm start hyprland.desktop
+# fi
 
 #--------------------------------MISE-------------------------------------
 eval "$(~/.local/bin/mise activate zsh)"
