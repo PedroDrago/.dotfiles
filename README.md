@@ -22,3 +22,11 @@ git clone --recurse-submodules git@github.com:PedroDrago/.dotfiles.git && cd .do
 
 # hyprland
 - tune animations: make them shorter, almost instant but still smooth
+
+# greeter
+- rice greeter to more minimal
+
+# wallpapers
+- have two, one more dark and one mor light || have cycling lofi landscaps
+
+
