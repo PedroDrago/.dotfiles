@@ -1,6 +1,6 @@
 [user]
 	name = Pedro Drago
-	email = drago@drago.com
+	email = 93255861+PedroDrago@users.noreply.github.com
 [init]
 	defaultBranch = main
 [color]
@@ -13,5 +13,3 @@
 	directory = *
 [push]
 	autoSetupRemote = true
-
-; 93255861+PedroDrago@users.noreply.github.com
