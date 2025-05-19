@@ -47,3 +47,8 @@ git clone --recurse-submodules git@github.com:PedroDrago/.dotfiles.git && cd .do
 
 # improove citrix
 - if i can find a way to make citrix very stable i can move from using debian in desktop to arch. maybe dont need to be very good because in desktop i will always have a dual boot with windows so it is a safe zone.
+
+# stable configs for multiple WM
+-i already have an ultra stable i3wm config, so i have a safe ground in X11, but i need to have an stable config in wayland too becausa hyprland is not stable. the way is to have a sway config that mirrors my i3wm config, ive tries to use my i3wm config file and it got 90% ready, but not 100%. Would be good to have a default WM also so that common folk can use my desktop, like gnome, kde etc.
+
+needs to study WM better, because idk if have all the WM tookits installed will bloat or create conflict in my system, so i need to study qt, gtk etc. does X11 services stop when i run wayland? definitely needs to study...
