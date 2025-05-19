@@ -1,12 +1,21 @@
+# start uwsm compositor selector screen
+if uwsm check may-start && uwsm select; then
+	exec uwsm start default
+fi
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
+
+#bypass screen and starts hyprland directly
+# if uwsm check may-start; then
+#     exec uwsm start hyprland.desktop
+# fi
 
 #--------------------------------MISE-------------------------------------
 eval "$(~/.local/bin/mise activate zsh)"
 #--------------------------------ENV--------------------------------------
 FZF_DEFAULT_COMMAND='fd --type f --type d --follow --exclude .git'
-FZF_DEFAULT_OPTS="--height 85% --preview 'batcat --style=numbers --color=always {}'"
+FZF_DEFAULT_OPTS="--height 85% --preview 'bat --style=numbers --color=always {}'"
 path+="$HOME/.local/bin"
 if lscpu | grep "Model name" | grep -q "i7-8700"; then
     export MACHINE="desktop"
@@ -19,16 +28,16 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 plugins=(git fzf colored-man-pages zsh-autosuggestions zsh-syntax-highlighting)
 source $ZSH/oh-my-zsh.sh
 #------------------------------ALIASES------------------------------------
-alias fd="fdfind"
+# alias fd="fdfind"
 alias grep='rg'
-alias vim='nvim'
+#alias vim='nvim'
 alias ls='eza --icons'
-alias bat='batcat --style=auto'
+alias bat='bat --style=auto'
 alias q='exit'
-alias chrome='google-chrome'
 alias nvima='nvim $(fd . -t file)'
 #---------------------------FUNCTIONS-------------------------------------
-vol() {amixer -D pulse sset Master "$1"% > /dev/null}
+#vol() {amixer -D pulse sset Master "$1"% > /dev/null}
+vol() {wpctl set-volume @DEFAULT_AUDIO_SINK@ "$1"%}
 
 pc() {
 	base_url="git@github.com:"

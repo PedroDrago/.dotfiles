@@ -1,19 +1,7 @@
 ### Kickstart single monitor
 ```bash
-git clone --recurse-submodules git@github.com:PedroDrago/.dotfiles.git && cd .dotfiles && ./install single
+git clone --recurse-submodules git@github.com:PedroDrago/.dotfiles.git && cd .dotfiles && ./install
 ```
-
-### Kickstart dual monitor
-```bash
-git clone --recurse-submodules git@github.com:PedroDrago/.dotfiles.git && cd .dotfiles && ./install dual
-```
-
-### My Tools
-- **Distro**: [Debian](https://www.debian.org/)
-- **Terminal**: [Alacritty](https://github.com/alacritty/alacritty)
-- **shell**: [zsh](https://www.zsh.org/) with [oh-my-zsh](https://github.com/ohmyzsh/ohmyzsh) and [Powerlevel10k](https://github.com/romkatv/powerlevel10k)
-- **Tiling Manager**: [i3wm](https://i3wm.org/)
-- **Text Editor**: [Neovim](https://github.com/neovim/neovim)
 
 ### Todo
 # Terminal Multiplexer
@@ -22,8 +10,23 @@ git clone --recurse-submodules git@github.com:PedroDrago/.dotfiles.git && cd .do
 # Shell 
 - Fix shell flickering on startup
 
-# Vscode
-- Good stable vscode configuration (almost done. Just lacking a few vim bindings)
+# Rofi / Wofi
+1. arbitrary web search with ! or ?
+1. style
+    - theme
+    - remove "drun" from start
 
-# Idea
-- Good vim configuration for intelliJ Idea
+
+# install/uninstall scripts
+- automate uninstall script. Probably using stow for remove is a good ideal
+
+# hyprland
+- tune animations: make them shorter, almost instant but still smooth
+
+# greeter
+- rice greeter to more minimal
+
+# wallpapers
+- have two, one more dark and one mor light || have cycling lofi landscaps
+
+

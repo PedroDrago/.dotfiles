@@ -1,6 +1,6 @@
 [tools]
 rust = "latest"
-go = "latest"
 python = "latest"
 node = "latest"
 zig = "0.13"
+go = "latest"

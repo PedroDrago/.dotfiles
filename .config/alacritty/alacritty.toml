@@ -139,7 +139,8 @@ size = 11
 
 [font.normal]
 # family = "MesloLGS NF"
-family = "Jetbrains Mono NF"
+#family = "Jetbrains Mono NF"
+family = "Jetbrains Mono Nerd Font"
 # family = "JetbrainsMonoNL Nerd Font" # Windows
 [window]
 dynamic_padding = true
