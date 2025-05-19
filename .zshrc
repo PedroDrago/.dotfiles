@@ -1,7 +1,7 @@
 # start uwsm compositor selector screen
-if uwsm check may-start && uwsm select; then
-	exec uwsm start default
-fi
+# if uwsm check may-start && uwsm select; then
+# 	exec uwsm start default
+# fi
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
