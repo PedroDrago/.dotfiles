@@ -4,6 +4,7 @@ git clone --recurse-submodules git@github.com:PedroDrago/.dotfiles.git && cd .do
 ```
 
 ### Todo
+1. first step: reinstall arch setting btrfs and timeshift for snapshots. also take the oportunity to validate setup steps and dotfiles.
 # Terminal Multiplexer
 - Create a good framework for using tmux
 
