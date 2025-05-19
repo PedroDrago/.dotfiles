@@ -52,3 +52,6 @@ git clone --recurse-submodules git@github.com:PedroDrago/.dotfiles.git && cd .do
 -i already have an ultra stable i3wm config, so i have a safe ground in X11, but i need to have an stable config in wayland too becausa hyprland is not stable. the way is to have a sway config that mirrors my i3wm config, ive tries to use my i3wm config file and it got 90% ready, but not 100%. Would be good to have a default WM also so that common folk can use my desktop, like gnome, kde etc.
 
 needs to study WM better, because idk if have all the WM tookits installed will bloat or create conflict in my system, so i need to study qt, gtk etc. does X11 services stop when i run wayland? definitely needs to study...
+
+# Snapshots on arch
+would be nice to have snapshots of my arch system using btrfs and timeshift. I think i would need more storage to manage that, but the goal is to have a snapshot to a clean arch install and one to latest stable config.
