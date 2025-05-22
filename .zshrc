@@ -76,6 +76,7 @@ finder(){ #NOTE: This finder includes all hidden files, but searches in 2 depth
 #-------------------------------KEYBINDINGS------------------------------------
 bindkey -s '^F' 'finder'"^M"
 #------------------------------POWERLEVEl10K-----------------------------------
+unsetopt histverify
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 [[ ! -f ~/.dotfiles/.p10k.zsh ]] || source ~/.dotfiles/.p10k.zsh

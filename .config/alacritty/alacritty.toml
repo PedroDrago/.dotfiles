@@ -144,7 +144,7 @@ family = "Jetbrains Mono Nerd Font"
 # family = "JetbrainsMonoNL Nerd Font" # Windows
 [window]
 dynamic_padding = true
-opacity = 1
+opacity = 0.9
 
 # [terminal.shell] # windows
 # program = "C:\\Windows\\System32\\wsl.exe"
