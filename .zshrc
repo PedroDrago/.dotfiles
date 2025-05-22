@@ -69,6 +69,10 @@ finder(){ #NOTE: This finder includes all hidden files, but searches in 2 depth
 		cd $dir && nvim $file
 	fi
 }
+
+
+# export HYPRCURSOR_THEME=Bibata-Modern-Classic
+# env = HYPRCURSOR_SIZE,24
 #-------------------------------KEYBINDINGS------------------------------------
 bindkey -s '^F' 'finder'"^M"
 #------------------------------POWERLEVEl10K-----------------------------------

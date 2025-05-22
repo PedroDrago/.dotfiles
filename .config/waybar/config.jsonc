@@ -18,6 +18,7 @@
     "modules-right": [
         // "mpd",
         // "idle_inhibitor",
+        "custom/opacity",
         "pulseaudio",
         "network",
         // "power-profiles-daemon",
@@ -27,7 +28,7 @@
         // "backlight",
         // "keyboard-state",
         // "hyprland/language",
-        "battery",
+        // "battery",
         // "battery#bat2",
         "custom/lock",
         // "custom/power",
@@ -165,7 +166,12 @@
         // "interface": "wlp2*", // (Optional) To force the use of this interface
         "format-wifi": "{essid} ({signalStrength}%) ",
         "tooltip": false,
-        // "format-ethernet": "{ipaddr}/{cidr} ",
+        "format-ethernet": "",
+        "format-disconnected": "Disconnected ⚠",
+        // "format-ethernet": "{ifname}/{cidr} ",
+        // "tooltip-format": "{ifname} via {gwaddr} ",
+        // "format-linked": "{ifname} (No IP) ",
+        // "format-alt": "{ifname}: {ipaddr}/{cidr}"
         // "tooltip-format": "{ifname} via {gwaddr} ",
         // "format-linked": "{ifname} (No IP) ",
         // "format-disconnected": "Disconnected ⚠",
@@ -215,7 +221,7 @@
 		}
     },
     "custom/lock": {
-        "format" : "  ",
+        "format" : "",
 		"tooltip": false,
 		// "menu": "on-click",
 		// "menu-file": "$HOME/.config/waybar/power_menu.xml", // Menu file in resources folder
@@ -227,6 +233,12 @@
 		// }
         "on-click": "hyprlock"
 
+    },
+    "custom/opacity": {
+        "format": " ", // or any icon/text you like
+        "tooltip": "Toggle Alacritty Opacity",
+        "on-click": "~/.config/waybar/swap_opacity.sh",
+        "interval": 0 // no auto-refresh needed
     }
 }
 
