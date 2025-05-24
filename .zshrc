@@ -22,6 +22,7 @@ if lscpu | grep "Model name" | grep -q "i7-8700"; then
 else
     export MACHINE="-"
 fi
+export TRANSPARENT="FALSE"
 #-----------------------------OH-MY-ZSH-----------------------------------
 ZSH="$HOME/.oh-my-zsh"
 ZSH_THEME="powerlevel10k/powerlevel10k"

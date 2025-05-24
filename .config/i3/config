@@ -2,14 +2,14 @@ set $mod Mod1
 
 # https://www.reddit.com/r/i3wm/comments/12y02cu/how_can_i_add_two_different_keyboard_layout_button/#:~:text=You%20can%20do%20all%20of%20that%20thru%20your%20i3%20config.&text=It%20sets%20both%20keyboard%20layouts,can%20toggle%20between%20the%20two.
 # set compose key as AltGr
-exec --no-startup-id setxkbmap -option compose:ralt
+# exec --no-startup-id setxkbmap -option compose:ralt
 
 #-----------I3STARTUP-CONFIGS--------------------
 exec_always --no-startup-id xrandr --output HDMI-0 --left-of DP-0
-exec_always --no-startup-id feh --bg-fill ~/.config/i3/wallpaper.png
+exec_always --no-startup-id feh --bg-fill ~/.config/wallpapers/default.png
 # disable capslock
-# exec_always --no-startup-id setxkbmap -option caps:escape
-exec_always --no-startup-id setxkbmap -option ctrl:nocaps -layout us,br -variant ,abnt2 -option "grp:win_space_toggle"
+# exec_always --no-startup-id setxkbmap -option caps:escape -layout us,br -variant ,abnt2 -option "grp:win_space_toggle"
+exec_always --no-startup-id setxkbmap -option caps:escape -layout us
 # exec_always --no-startup-id xset r rate 200 45
 exec xautolock -detectsleep -time 10 -locker "i3lock -t -i $HOME/.config/wallpapers/default.png"
 #-----------Applications--------------------
@@ -18,9 +18,6 @@ bindsym Control+shift+l exec "i3lock -t -i $HOME/.config/wallpapers/default.png"
 bindsym $mod+d exec --no-startup-id dmenu_run -i -nb "#171C18" -nf "#F8F8F8" -sb "#61AFEF" -sf "#171C18"
 bindsym $mod+Return exec alacritty
 #-----------WORKSPACES-----------------
-# create monitors variables
-SET $primary_monitor DP-0
-SET $secondary_monitor HDMI-0
 
 # create workspaces variables
 set $ws1 "1"
@@ -34,36 +31,6 @@ set $ws8 "8"
 set $ws9 "9"
 set $ws0 "0"
 
-workspace 1 output $primary_monitor
-#workspace 1 output $secondary_monitor
-
-workspace 2 output $primary_monitor
-#workspace 2 output $secondary_monitor
-
-workspace 3 output $primary_monitor
-#workspace 3 output $secondary_monitor
-
-# workspace 4 output $primary_monitor
-#workspace 4 output $secondary_monitor
-
-# workspace 5 output $primary_monitor
-workspace 5 output $secondary_monitor
-
-# workspace 6 output $primary_monitor
-workspace 6 output $secondary_monitor
-
-# workspace 7 output $primary_monitor
-workspace 7 output $secondary_monitor
-
-workspace 8 output $primary_monitor
-#workspace 8 output $secondary_monitor
-
-workspace 9 output $primary_monitor
-#workspace 9 output $secondary_monitor
-
-workspace 0 output $primary_monitor
-#workspace 0 output $secondary_monitor
-
 # switch to workspace
 bindsym $mod+1 workspace number $ws1
 bindsym $mod+2 workspace number $ws2
@@ -76,6 +43,7 @@ bindsym $mod+8 workspace number $ws8
 bindsym $mod+9 workspace number $ws9
 bindsym $mod+0 workspace number $ws10
 
+
 # move focused container to workspace
 bindsym $mod+Shift+1 move container to workspace number $ws1
 bindsym $mod+Shift+2 move container to workspace number $ws2
@@ -87,6 +55,23 @@ bindsym $mod+Shift+7 move container to workspace number $ws7
 bindsym $mod+Shift+8 move container to workspace number $ws8
 bindsym $mod+Shift+9 move container to workspace number $ws9
 bindsym $mod+Shift+0 move container to workspace number $ws10
+
+#-----------------------MONITORS-------------------------
+
+SET $primary_monitor DP-0
+SET $secondary_monitor HDMI-0
+
+workspace 1 output $primary_monitor
+workspace 2 output $primary_monitor
+workspace 3 output $primary_monitor
+workspace 4 output $primary_monitor
+workspace 5 output $primary_monitor
+workspace 6 output $primary_monitor
+workspace 7 output $primary_monitor
+workspace 8 output $primary_monitor
+workspace 9 output $primary_monitor
+workspace 0 output $secondary_monitor
+
 #-----------------------BAR-------------------------
 
 bar {
@@ -126,6 +111,24 @@ bar {
   bindsym button5 nop
 
 }
+
+# NOTE: Single monitor bar
+# bar {
+#   status_command i3status
+#   position top
+#   font pango:Jetbrains Mono NF 10
+#   colors {
+#     background #171C18
+#     statusline #F8F8F8
+#     focused_workspace #61AFEF #61AFEF #171C18
+#     active_workspace #222222 #222222 #888888
+#     urgent_workspace #CC6666 #CC6666 #F8F8F8
+#   }
+#   #disable mouse scrolling
+#   bindsym button4 nop
+#   bindsym button5 nop
+#
+# }
 
 #-----------------------TILES-------------------------------
 #change border size and remove title
