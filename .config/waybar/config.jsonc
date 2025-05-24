@@ -28,7 +28,7 @@
         // "backlight",
         // "keyboard-state",
         // "hyprland/language",
-        // "battery",
+        "battery",
         // "battery#bat2",
         "custom/lock",
         // "custom/power",
@@ -194,7 +194,7 @@
             "car": "",
             "default": ["", "", ""]
         },
-        // "on-click": "pavucontrol"
+        "on-click": "pavucontrol"
     },
     "custom/media": {
         "format": "{icon} {text}",
