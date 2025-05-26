@@ -2,6 +2,7 @@
 
 ./uninstall
 
+# dependencies: stow git
 stow --adopt . #maybe uninstall could be just stow -D (delete)
 cd $HOME/.dotfiles/.config/nvim && git checkout main
 
