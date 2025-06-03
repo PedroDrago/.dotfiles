@@ -1,3 +1,4 @@
 #! /bin/sh
 
 stow -D .
+rm -f $HOME/.config/i3/config

@@ -29,9 +29,7 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 plugins=(git fzf colored-man-pages zsh-autosuggestions zsh-syntax-highlighting)
 source $ZSH/oh-my-zsh.sh
 #------------------------------ALIASES------------------------------------
-# alias fd="fdfind"
-alias grep='rg'
-#alias vim='nvim'
+alias vim='nvim'
 alias ls='eza --icons'
 alias bat='bat --style=auto'
 alias q='exit'
