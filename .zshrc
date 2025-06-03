@@ -1,15 +1,6 @@
-# start uwsm compositor selector screen
-# if uwsm check may-start && uwsm select; then
-# 	exec uwsm start default
-# fi
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
-
-#bypass screen and starts hyprland directly
-# if uwsm check may-start; then
-#     exec uwsm start hyprland.desktop
-# fi
 
 #--------------------------------MISE-------------------------------------
 eval "$(~/.local/bin/mise activate zsh)"
@@ -31,12 +22,12 @@ source $ZSH/oh-my-zsh.sh
 #------------------------------ALIASES------------------------------------
 alias vim='nvim'
 alias ls='eza --icons'
-alias bat='bat --style=auto'
+alias cat='bat --style=auto'
 alias q='exit'
 alias nvima='nvim $(fd . -t file)'
 #---------------------------FUNCTIONS-------------------------------------
-#vol() {amixer -D pulse sset Master "$1"% > /dev/null}
-vol() {wpctl set-volume @DEFAULT_AUDIO_SINK@ "$1"%}
+#vol() {amixer -D pulse sset Master "$1"% > /dev/null} # PULSEAUDIO
+vol() {wpctl set-volume @DEFAULT_AUDIO_SINK@ "$1"%} # PIPEWIRE
 
 pc() {
 	base_url="git@github.com:"
@@ -69,13 +60,11 @@ finder(){ #NOTE: This finder includes all hidden files, but searches in 2 depth
 	fi
 }
 
-
-# export HYPRCURSOR_THEME=Bibata-Modern-Classic
-# env = HYPRCURSOR_SIZE,24
 #-------------------------------KEYBINDINGS------------------------------------
 bindkey -s '^F' 'finder'"^M"
+#---------------------------------OPTIONS--------------------------------------
+unsetopt histverify # NOTE: allow !! to directly repeat last command
 #------------------------------POWERLEVEl10K-----------------------------------
-unsetopt histverify
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 [[ ! -f ~/.dotfiles/.p10k.zsh ]] || source ~/.dotfiles/.p10k.zsh
