@@ -22,3 +22,8 @@ git clone --recurse-submodules git@github.com:PedroDrago/.dotfiles.git && cd .do
 
 # Snapshots on grub
 Allow to boot on btrfs snapshots via grub
+
+# Full migration to sway
+When nvidia have good open source drivers that allow wayland to work on it I can completely remove all X11 dependencies from setup. The dotfiles have no need to be deleted, but would be nice to not have to manage i3wm config alongside to sway, and also to not need to install X11 stuff.
+
+Other alternative is to next time buy an AMD GPU.
