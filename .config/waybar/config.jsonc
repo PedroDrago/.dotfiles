@@ -25,12 +25,13 @@
         // "cpu",
         // "memory",
         // "temperature",
-        // "backlight",
+        "backlight",
         // "keyboard-state",
         // "hyprland/language",
         "battery",
         // "battery#bat2",
-        "custom/lock",
+        // "custom/lock",
+        // "custom/notification",
         // "custom/power",
         "tray",
     ],
@@ -236,9 +237,29 @@
     },
     "custom/opacity": {
         "format": " ", // or any icon/text you like
-        "tooltip": "Toggle Alacritty Opacity",
+        // "tooltip": "Toggle Transparency",
         "on-click": "~/.config/waybar/swap_opacity.sh",
         "interval": 0 // no auto-refresh needed
-    }
+    },
+    "custom/notification": {
+    "tooltip": false,
+    "format": "{icon} ",
+    "format-icons": {
+      "notification": "<span foreground='red'><sup></sup></span>",
+      "none": "",
+      "dnd-notification": "<span foreground='red'><sup></sup></span>",
+      "dnd-none": "",
+      "inhibited-notification": "<span foreground='red'><sup></sup></span>",
+      "inhibited-none": "",
+      "dnd-inhibited-notification": "<span foreground='red'><sup></sup></span>",
+      "dnd-inhibited-none": ""
+    },
+    "return-type": "json",
+    "exec-if": "which swaync-client",
+    "exec": "swaync-client -swb",
+    "on-click": "swaync-client -t -sw",
+    "on-click-right": "swaync-client -d -sw",
+    "escape": true
+    },
 }
 
