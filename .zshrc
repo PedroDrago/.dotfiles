@@ -21,8 +21,9 @@ plugins=(git fzf colored-man-pages zsh-autosuggestions zsh-syntax-highlighting)
 source $ZSH/oh-my-zsh.sh
 #------------------------------ALIASES------------------------------------
 alias vim='nvim'
+alias fd='fdfind'
 alias ls='eza --icons'
-alias cat='bat --style=auto'
+alias cat='batcat --style=auto'
 alias q='exit'
 alias nvima='nvim $(fd . -t file)'
 #---------------------------FUNCTIONS-------------------------------------

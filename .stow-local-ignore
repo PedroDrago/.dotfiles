@@ -6,5 +6,7 @@ fonts.sh
 uninstall
 README.md
 TODO.md
+AGENTS.md
+CLAUDE.md
 .config/i3
 etc

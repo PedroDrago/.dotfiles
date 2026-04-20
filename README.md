@@ -38,3 +38,5 @@ When nvidia have good open source drivers that allow wayland to work on it I can
 
 Other alternative is to next time buy an AMD GPU.
 
+# Terminal emulator
+alacritty is still the faster? I know ghostty is the new kid on the block but when i tested in linux it was nothing impressive in speed, maybe more feature rich but the speed matters a lot to me.

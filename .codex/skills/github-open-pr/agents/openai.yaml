@@ -1,0 +1,6 @@
+interface:
+  display_name: "Open GitHub PR"
+  short_description: "Commit, push, and open a concise GitHub PR"
+  default_prompt: "Use $github-open-pr to commit my pending work in logical chunks, push the branch, and open a concise PR."
+policy:
+  allow_implicit_invocation: true
