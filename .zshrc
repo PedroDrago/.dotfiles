@@ -69,3 +69,10 @@ unsetopt histverify # NOTE: allow !! to directly repeat last command
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 [[ ! -f ~/.dotfiles/.p10k.zsh ]] || source ~/.dotfiles/.p10k.zsh
+
+# bun completions
+[ -s "/home/drago/.bun/_bun" ] && source "/home/drago/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"

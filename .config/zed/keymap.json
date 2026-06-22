@@ -1,0 +1,173 @@
+// Zed keymap
+//
+// For information on binding keys, see the Zed
+// documentation: https://zed.dev/docs/key-bindings
+//
+// To see the default key bindings run `zed: open default keymap`
+// from the command palette.
+// [
+//   {
+//     "context": "Workspace",
+//     "bindings": {
+//       // "shift shift": "file_finder::Toggle"
+//     },
+//   },
+//   {
+//     "context": "Editor && vim_mode == insert",
+//     "bindings": {
+//       // "j k": "vim::NormalBefore"
+//     },
+//   },
+// ]
+[
+  {
+    "context": "Editor && vim_mode == insert && !menu",
+    "bindings": {
+      "ctrl-backspace": "editor::DeleteToPreviousWordStart",
+      "ctrl-c": null,
+      "ctrl-s": "editor::ShowSignatureHelp",
+    },
+  },
+
+  {
+    "context": "Terminal",
+    "bindings": {
+      "escape": ["terminal::SendKeystroke", "ctrl-\\ ctrl-n"],
+    },
+  },
+
+  {
+    "context": "VimControl && !menu",
+    "bindings": {
+      "space": null,
+      "space d": ["workspace::SendKeystrokes", "\" _ d"],
+    },
+  },
+
+  {
+    "context": "Editor && vim_mode == normal && !menu",
+    "bindings": {
+      "ctrl-z": null,
+
+      "space a": "pane::SplitRight",
+      "space shift-a": "pane::SplitDown",
+      "space q": "pane::CloseAllItems",
+
+      "ctrl-h": "workspace::ActivatePaneLeft",
+      "ctrl-l": "workspace::ActivatePaneRight",
+      "ctrl-k": "workspace::ActivatePaneUp",
+
+      "space j": "workspace::SwapPaneAdjacent",
+      "space v": "workspace::MovePaneDown",
+      "space shift-v": "workspace::MovePaneRight",
+      "space =": "vim::ResetPaneSizes",
+
+      "space shift-t": "workspace::NewCenterTerminal",
+      "space t": "terminal_panel::ToggleFocus",
+
+      "space r": "buffer_search::DeployReplace",
+      "f1": "zed::OpenKeymap",
+      "ctrl-d": ["workspace::SendKeystrokes", "ctrl-d z z"],
+      "ctrl-u": ["workspace::SendKeystrokes", "ctrl-u z z"],
+      "escape": "buffer_search::Dismiss",
+
+      "space i": "editor::ToggleInlayHints",
+
+      "g d": "editor::GoToDefinition",
+      "g a": "editor::GoToDefinitionSplit",
+      "g r": "editor::FindAllReferences",
+      "g s": "outline_panel::Toggle",
+      "g shift-s": "workspace::NewSearch",
+      "space s": "editor::Rename",
+      "space c": "editor::ToggleCodeActions",
+      "space shift-d": "editor::GoToTypeDefinition",
+      "shift-k": "editor::Hover",
+      "shift-s": "editor::ShowSignatureHelp",
+      "g shift-d": "editor::GoToDeclaration",
+
+      // Optional, but not a perfect port of your expr maps:
+      // "j": ["workspace::SendKeystrokes", "g j"],
+      // "k": ["workspace::SendKeystrokes", "g k"],
+    },
+  },
+
+  {
+    "context": "Editor && vim_mode == visual && !menu",
+    "bindings": {
+      "space d": ["workspace::SendKeystrokes", "\" _ d"],
+      "space c": "editor::ToggleCodeActions",
+      "space s": "buffer_search::DeployReplace",
+
+      "<": "editor::Outdent",
+      ">": "editor::Indent",
+      "tab": "editor::Indent",
+      "shift-tab": "editor::Outdent",
+
+      "p": "vim::PushReplaceWithRegister",
+
+      "/": "buffer_search::Deploy",
+    },
+  },
+  {
+    "context": "Editor && vim_mode == normal && !menu",
+    "bindings": {
+      "space f": "file_finder::Toggle",
+      "space p": "command_palette::Toggle",
+      "space /": "workspace::NewSearch",
+    },
+  },
+  {
+    "context": "Editor && vim_mode == normal && !menu",
+    "bindings": {
+      "space e": "project_panel::ToggleFocus",
+    },
+  },
+  {
+    "context": "ProjectPanel && not_editing",
+    "bindings": {
+      "space e": "project_panel::Toggle",
+    },
+  },
+  {
+    "context": "Editor && vim_mode == normal && !menu",
+    "bindings": {
+      "space z": "diagnostics::Deploy",
+    },
+  },
+  {
+    "context": "Editor && vim_mode == normal && !menu",
+    "bindings": {
+      "space g": "git_panel::Toggle",
+    },
+  },
+  {
+    "context": "GitPanel",
+    "bindings": {
+      "space g": "git_panel::Close",
+    },
+  },
+  {
+    "context": "GitPanel && ChangesList && !GitBranchSelector",
+    "bindings": {
+      "enter": "git::ToggleStaged",
+    },
+  },
+  {
+    "context": "GitPanel && ChangesList && !GitBranchSelector",
+    "unbind": {
+      "space": "git::ToggleStaged",
+    },
+  },
+  {
+    "context": "Workspace",
+    "unbind": {
+      "ctrl-j": "workspace::ToggleBottomDock",
+    },
+  },
+  {
+    "context": "Editor && vim_mode == normal && !menu",
+    "bindings": {
+      "space l": "workspace::ToggleEditPrediction",
+    },
+  },
+]
