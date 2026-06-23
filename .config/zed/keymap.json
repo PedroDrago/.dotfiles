@@ -21,11 +21,18 @@
 // ]
 [
   {
+    "context": "Workspace",
+    "bindings": {},
+    "unbind": {
+      "ctrl-j": "workspace::ToggleBottomDock",
+    },
+  },
+
+  {
     "context": "Editor && vim_mode == insert && !menu",
     "bindings": {
       "ctrl-backspace": "editor::DeleteToPreviousWordStart",
       "ctrl-c": null,
-      "ctrl-s": "editor::ShowSignatureHelp",
     },
   },
 
@@ -40,7 +47,7 @@
     "context": "VimControl && !menu",
     "bindings": {
       "space": null,
-      "space d": ["workspace::SendKeystrokes", "\" _ d"],
+      // "space d": ["workspace::SendKeystrokes", "\" _ d"],
     },
   },
 
@@ -61,6 +68,7 @@
       "space v": "workspace::MovePaneDown",
       "space shift-v": "workspace::MovePaneRight",
       "space =": "vim::ResetPaneSizes",
+      "space d f": "editor::ToggleAllDiffHunks",
 
       "space shift-t": "workspace::NewCenterTerminal",
       "space t": "terminal_panel::ToggleFocus",
@@ -85,9 +93,14 @@
       "shift-s": "editor::ShowSignatureHelp",
       "g shift-d": "editor::GoToDeclaration",
 
-      // Optional, but not a perfect port of your expr maps:
-      // "j": ["workspace::SendKeystrokes", "g j"],
-      // "k": ["workspace::SendKeystrokes", "g k"],
+      "space f": "file_finder::Toggle",
+      "space p": "command_palette::Toggle",
+      "space /": "workspace::NewSearch",
+      "space w": "agent::Toggle",
+
+      "space e": "project_panel::ToggleFocus",
+      "space z": "diagnostics::Deploy",
+      "space l": "workspace::ToggleEditPrediction",
     },
   },
 
@@ -108,68 +121,24 @@
       "/": "buffer_search::Deploy",
     },
   },
-  {
-    "context": "Editor && vim_mode == normal && !menu",
-    "bindings": {
-      "space f": "file_finder::Toggle",
-      "space p": "command_palette::Toggle",
-      "space /": "workspace::NewSearch",
-    },
-  },
-  {
-    "context": "Editor && vim_mode == normal && !menu",
-    "bindings": {
-      "space e": "project_panel::ToggleFocus",
-    },
-  },
+
   {
     "context": "ProjectPanel && not_editing",
     "bindings": {
       "space e": "project_panel::Toggle",
     },
   },
-  {
-    "context": "Editor && vim_mode == normal && !menu",
-    "bindings": {
-      "space z": "diagnostics::Deploy",
-    },
-  },
-  // {
-  //   "context": "Editor && vim_mode == normal && !menu",
-  //   "bindings": {
-  //     "space g": "git_panel::Toggle",
-  //   },
-  // },
-  // {
-  //   "context": "GitPanel",
-  //   "bindings": {
-  //     "space g": "git_panel::Close",
-  //   },
-  // },
+
   {
     "context": "GitPanel && ChangesList && !GitBranchSelector",
     "bindings": {
       "enter": "git::ToggleStaged",
     },
-  },
-  {
-    "context": "GitPanel && ChangesList && !GitBranchSelector",
     "unbind": {
       "space": "git::ToggleStaged",
     },
   },
-  {
-    "context": "Workspace",
-    "unbind": {
-      "ctrl-j": "workspace::ToggleBottomDock",
-    },
-  },
-  {
-    "context": "Editor && vim_mode == normal && !menu",
-    "bindings": {
-      "space l": "workspace::ToggleEditPrediction",
-    },
-  },
+
   {
     "context": "Editor",
     "bindings": {
@@ -178,16 +147,12 @@
     },
   },
   {
-    "bindings": {
-      "space d f": "editor::ToggleAllDiffHunks",
-    },
-  },
-  {
     "context": "Editor && mode == full && vim_mode == normal && !multibuffer && !menu",
     "bindings": {
       "space g": "git::Diff",
     },
   },
+
   {
     "context": "Editor && mode == full && vim_mode == normal && multibuffer && !menu",
     "bindings": {
@@ -196,27 +161,92 @@
       "enter": "editor::OpenExcerpts",
     },
   },
+
   {
     "context": "GitPanel",
     "bindings": {
       "space e": "git_panel::Toggle",
     },
   },
+  {
+    "context": "Editor && (showing_completions || showing_code_actions)",
+    "bindings": {
+      "ctrl-y": "editor::ConfirmCompletion",
+      "ctrl-j": "editor::ContextMenuNext",
+      "ctrl-k": "editor::ContextMenuPrevious",
+      "tab": null,
+    },
+  },
+  {
+    "context": "Picker > Editor",
+    "bindings": {
+      "down": "menu::SelectNext",
+    },
+  },
+  {
+    "context": "Picker > Editor",
+    "unbind": {
+      "down": "menu::SelectNext",
+    },
+  },
+  {
+    "context": "Picker || menu",
+    "bindings": {
+      "down": "menu::SelectNext",
+    },
+  },
+  {
+    "context": "Picker || menu",
+    "unbind": {
+      "down": "menu::SelectNext",
+    },
+  },
+  {
+    "context": "Picker > Editor",
+    "bindings": {
+      "ctrl-j": "menu::SelectNext",
+    },
+  },
+  {
+    "context": "Picker > Editor",
+    "unbind": {
+      "ctrl-n": "menu::SelectNext",
+    },
+  },
+  {
+    "context": "Picker > Editor",
+    "bindings": {
+      "ctrl-k": "menu::SelectPrevious",
+    },
+  },
+  {
+    "context": "Picker > Editor",
+    "unbind": {
+      "ctrl-p": "menu::SelectPrevious",
+    },
+  },
+  {
+    "context": "Picker > Editor",
+    "unbind": {
+      "ctrl-h": "editor::Backspace",
+    },
+  },
   // {
-  //   "context": "Editor",
+  //   "context": "BufferSearchBar",
   //   "bindings": {
-  //     "space g": "git::Diff",
+  //     "space s": "search::ToggleReplace",
   //   },
   // },
   // {
-  //   "context": "GitPanel",
-  //   "unbind": {
-  //     "ctrl-g d": "git::Diff",
+  //   "context": "ProjectSearchBar",
+  //   "bindings": {
+  //     "space s": "search::ToggleReplace",
   //   },
   // },
   // {
+  //   "context": "ProjectSearchView",
   //   "bindings": {
-  //     "ctrl-g d": "git_panel::Toggle",
+  //     "space s": "search::ToggleReplace",
   //   },
   // },
 ]
