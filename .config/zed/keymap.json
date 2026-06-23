@@ -134,18 +134,18 @@
       "space z": "diagnostics::Deploy",
     },
   },
-  {
-    "context": "Editor && vim_mode == normal && !menu",
-    "bindings": {
-      "space g": "git_panel::Toggle",
-    },
-  },
-  {
-    "context": "GitPanel",
-    "bindings": {
-      "space g": "git_panel::Close",
-    },
-  },
+  // {
+  //   "context": "Editor && vim_mode == normal && !menu",
+  //   "bindings": {
+  //     "space g": "git_panel::Toggle",
+  //   },
+  // },
+  // {
+  //   "context": "GitPanel",
+  //   "bindings": {
+  //     "space g": "git_panel::Close",
+  //   },
+  // },
   {
     "context": "GitPanel && ChangesList && !GitBranchSelector",
     "bindings": {
@@ -170,4 +170,53 @@
       "space l": "workspace::ToggleEditPrediction",
     },
   },
+  {
+    "context": "Editor",
+    "bindings": {
+      "ctrl-t": "pane::GoBack",
+      "ctrl-shift-t": "pane::GoForward",
+    },
+  },
+  {
+    "bindings": {
+      "space d f": "editor::ToggleAllDiffHunks",
+    },
+  },
+  {
+    "context": "Editor && mode == full && vim_mode == normal && !multibuffer && !menu",
+    "bindings": {
+      "space g": "git::Diff",
+    },
+  },
+  {
+    "context": "Editor && mode == full && vim_mode == normal && multibuffer && !menu",
+    "bindings": {
+      "space g": "pane::CloseActiveItem",
+      "space e": "git_panel::ToggleFocus",
+      "enter": "editor::OpenExcerpts",
+    },
+  },
+  {
+    "context": "GitPanel",
+    "bindings": {
+      "space e": "git_panel::Toggle",
+    },
+  },
+  // {
+  //   "context": "Editor",
+  //   "bindings": {
+  //     "space g": "git::Diff",
+  //   },
+  // },
+  // {
+  //   "context": "GitPanel",
+  //   "unbind": {
+  //     "ctrl-g d": "git::Diff",
+  //   },
+  // },
+  // {
+  //   "bindings": {
+  //     "ctrl-g d": "git_panel::Toggle",
+  //   },
+  // },
 ]

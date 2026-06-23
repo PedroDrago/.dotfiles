@@ -7,7 +7,7 @@
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
-  "show_edit_predictions": false,
+  "show_edit_predictions": true,
   "inline_code_actions": false,
   "debugger": {
     "button": true,
@@ -127,7 +127,7 @@
     "file_icons": false,
     "tree_view": true,
     "collapse_untracked_diff": false,
-    "dock": "left",
+    "dock": "right",
   },
   "session": {
     "trust_all_worktrees": true,
