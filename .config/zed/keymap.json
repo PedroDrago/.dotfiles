@@ -84,7 +84,7 @@
       "g d": "editor::GoToDefinition",
       "g a": "editor::GoToDefinitionSplit",
       "g r": "editor::FindAllReferences",
-      "g s": "outline_panel::Toggle",
+      "space o": "outline_panel::Toggle",
       "g shift-s": "workspace::NewSearch",
       "space s": "editor::Rename",
       "space c": "editor::ToggleCodeActions",
